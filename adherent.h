@@ -14,6 +14,9 @@ private :
   List<Livre> livreEmpruntés;
   int maxEmprunt;
 public :
-  Adhérent();
-  Adhérent(int)
+  Adhérent(); //assigne un num d'adhérent
+  Adhérent(String n, String p); //avec nom, prémnom
+  ~Adhérent();
+  void Emprunter(String code);
+  void Rendre(Livre livre);
 }
