@@ -2,26 +2,26 @@
 
 Emprunteur::Emprunteur()
 {
-    biblio = Bibliotheque();
-    adherent = Adherent();
+    biblio = nullptr;
+    adherent = nullptr;
 }
 
-const Bibliotheque &Emprunteur::getBiblio()
+const Bibliotheque* Emprunteur::getBiblio()
 {
     return biblio;
 }
 
-const Adherent &Emprunteur::getAdherent()
+const Adherent* Emprunteur::getAdherent()
 {
     return adherent;
 }
 
-void Emprunteur::setBiblio(const Bibliotheque &bibliotheque)
+void Emprunteur::setBiblio(Bibliotheque* bibliotheque)
 {
-    biblio = bibliotheque;
+    this->biblio = bibliotheque;
 }
 
-void Emprunteur::setAdherent(const Adherent& adherent)
+void Emprunteur::setAdherent(Adherent *adherent)
 {
     this->adherent = adherent;
 }
