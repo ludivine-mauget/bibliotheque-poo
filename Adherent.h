@@ -1,10 +1,14 @@
+#ifndef BIBLIOTHEQUE_POO_ADHERENT_H
+#define BIBLIOTHEQUE_POO_ADHERENT_H
+
+
 #include <iostream>
 using namespace std;
 #include "Bibliotheque.h"
 #include "Livre.h"
 
-class Adherent
-{
+
+class Adherent {
 private:
 	string nom;
 	string prenom;
@@ -33,4 +37,6 @@ public:
 	const Livre* getLivres() const;
 	const int& getMaxEmprunt() const;
 	void setMaxEmprunt(const int& seuil);
-}
+};
+
+#endif //BIBLIOTHEQUE_POO_ADHERENT_H
