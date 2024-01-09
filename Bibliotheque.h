@@ -2,8 +2,8 @@
 // Created by Massif on 08/01/2024.
 //
 
-#ifndef BIBLIO_BIBLIOTHEQUE_H
-#define BIBLIO_BIBLIOTHEQUE_H
+#ifndef BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
+#define BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
 
 #include <iostream>
 
@@ -19,4 +19,4 @@ class Bibliotheque {
 };
 
 
-#endif //BIBLIO_BIBLIOTHEQUE_H
+#endif //BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

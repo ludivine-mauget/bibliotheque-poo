@@ -2,8 +2,8 @@
 // Created by Massif on 08/01/2024.
 //
 
-#ifndef BIBLIO_LIVRE_H
-#define BIBLIO_LIVRE_H
+#ifndef BIBLIOTHEQUE_POO_LIVRE_H
+#define BIBLIOTHEQUE_POO_LIVRE_H
 
 #include <iostream>
 
@@ -42,4 +42,4 @@ protected:
 };
 
 
-#endif //BIBLIO_LIVRE_H
+#endif //BIBLIOTHEQUE_POO_LIVRE_H
