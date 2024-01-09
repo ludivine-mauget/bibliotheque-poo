@@ -30,7 +30,7 @@ public:
     virtual void affiche();
     enum types {LIVRE, BD, POESIE, ROMAN, PIECE, ALBUM};
 
-private:
+protected:
     int type;
     int code{};
     string auteur;
