@@ -2,8 +2,8 @@
 // Created by Massi on 09/01/2024.
 //
 
-#ifndef BIBLIO_THEATRE_H
-#define BIBLIO_THEATRE_H
+#ifndef BIBLIOTHEQUE_POO_THEATRE_H
+#define BIBLIOTHEQUE_POO_THEATRE_H
 
 #include "Livre.h"
 #include <iostream>
@@ -25,4 +25,4 @@ public :
 };
 
 
-#endif //BIBLIO_THEATRE_H
+#endif //BIBLIOTHEQUE_POO_THEATRE_H

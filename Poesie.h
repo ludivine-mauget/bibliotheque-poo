@@ -2,7 +2,7 @@
 #include "Livre.h"
 using namespace std;
 
-enum Indic { VERS, PROSE, BOTH };
+enum Indic {VERS, PROSE, BOTH };
 
 class Poesie : public Livre
 {
