@@ -1,19 +1,25 @@
-cmake_minimum_required(VERSION 3.26)
-project(bibliotheque_poo)
+cmake_minimum_required(VERSION 3.23)
+project(bibliotheque-poo)
 
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(bibliotheque_poo
+add_executable(bibliotheque-poo
         Adherent.h
         Album.cpp
         Album.h
-        BandeDessinee.h
         Bibliotheque.h
         Livre.h
         PieceDeTheatre.h
         Poesie.cpp
         Poesie.h
         RecueilDePoesie.h
-        Roman.h)
+        Roman.h
+        BD.cpp
+        BD.h
+        Bibliotheque.cpp
+        Bibliotheque.h
+        Livre.cpp
+        Livre.h)
+
