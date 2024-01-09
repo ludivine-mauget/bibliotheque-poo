@@ -4,6 +4,8 @@
 
 #include "Adherent.h"
 
+int Adherent::nbAdherent = 0;
+
 Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque) {
     this->nom = nom;
     this->prenom = prenom;
