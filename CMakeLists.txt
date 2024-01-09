@@ -9,12 +9,9 @@ add_executable(bibliotheque-poo
         Adherent.h
         Album.cpp
         Album.h
-        Bibliotheque.h
-        Livre.h
         Theatre.h
         Poesie.cpp
         Poesie.h
-        RecueilDePoesie.h
         Roman.h
         BD.cpp
         BD.h
