@@ -2,12 +2,12 @@
 using namespace std;
 #include <iostream>
 
-Poesie::Poesie(const Poesie& poesie)
+Poésie::Poésie(const Poésie& poésie)
 {
   //oui
 }
 
-void Poesie::Affiche()
+void Poésie::Affiche()
 {
 	if (indicateur == vers) {
 		affiche();

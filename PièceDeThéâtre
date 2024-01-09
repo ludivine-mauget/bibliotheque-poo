@@ -1,8 +1,0 @@
-#pragma once
-#include "Livre.h"
-class PieceDeTheatre :
-    public Livre
-{
-private:
-    int siecle;
-};
