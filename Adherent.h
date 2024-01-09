@@ -1,6 +1,6 @@
 #include <iostream>
 using namesapce std;
-#include "Bibliothèque.h"
+#include "Bibliotheque.h"
 #include "Livre.h"
 
 class Adhérent
