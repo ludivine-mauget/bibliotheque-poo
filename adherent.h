@@ -6,8 +6,9 @@ using namesapce std;
 class Adhérent
 {
 private :
-  String nom;
-  String prénom;
+  string nom;
+  string prénom;
+  string adresse;
   static int nbAdhérent;
   int numAdhérent;
   Blibliothèque bibliothèque;
