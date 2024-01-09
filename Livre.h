@@ -8,7 +8,6 @@
 #include <iostream>
 #include "Bibliotheque.h"
 #include "Adherent.h"
-#include "Emprunteur.h"
 
 using namespace std;
 
