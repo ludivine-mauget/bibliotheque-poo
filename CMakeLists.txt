@@ -20,5 +20,8 @@ add_executable(bibliotheque-poo
         Livre.cpp
         Livre.h
         Roman.cpp
-        Theatre.cpp)
+        Theatre.cpp
+        Emprunteur.h
+        Emprunteur.cpp
+        main.cpp)
 

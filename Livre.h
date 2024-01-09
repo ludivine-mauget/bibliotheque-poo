@@ -6,29 +6,33 @@
 #define BIBLIOTHEQUE_POO_LIVRE_H
 
 #include <iostream>
+#include "Bibliotheque.h"
+#include "Adherent.h"
+#include "Emprunteur.h"
 
 using namespace std;
 
 
 class Livre {
 public:
-    Livre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
-          const string &public_vise);
+    Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+        const string& public_vise);
     Livre();
     int getCode() const;
     void setCode(int code);
-    const string &getAuteur() const;
-    void setAuteur(const string &auteur);
-    const string &getTitre() const;
-    void setTitre(const string &titre);
-    const string &getEditeur() const;
-    void setEditeur(const string &editeur);
-    const string &getIsbn() const;
-    void setIsbn(const string &isbn);
-    const string &getPublicVise() const;
-    void setPublicVise(const string &publicVise);
+    const string& getAuteur() const;
+    void setAuteur(const string& auteur);
+    const string& getTitre() const;
+    void setTitre(const string& titre);
+    const string& getEditeur() const;
+    void setEditeur(const string& editeur);
+    const string& getIsbn() const;
+    void setIsbn(const string& isbn);
+    const string& getPublicVise() const;
+    void setPublicVise(const string& publicVise);
     virtual void affiche();
-    enum types {LIVRE, BD, POESIE, ROMAN, PIECE, ALBUM};
+    const Emprunteur getEmprunteur();
+    enum types { LIVRE, BD, POESIE, ROMAN, PIECE, ALBUM };
 
 protected:
     int type;
@@ -38,9 +42,8 @@ protected:
     string editeur;
     string ISBN;
     string publicVise;
-    emprunteur* emprunte_par{}; // TODO
+    Emprunteur *emprunte_par; // TODO
 };
 
 
 #endif //BIBLIOTHEQUE_POO_LIVRE_H
-

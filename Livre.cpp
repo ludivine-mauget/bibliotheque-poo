@@ -3,7 +3,6 @@
 //
 
 #include "Livre.h"
-#include "Emprunteur.h"
 #include "Adherent.h"
 #include "Album.h"
 #include <iostream>
@@ -11,15 +10,13 @@
 
 using namespace std;
 
-Livre::Livre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
-             const string &public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
-                                          publicVise(public_vise) {
-    emprunte_par = nullptr;
-    type = LIVRE;
+Livre::Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+    const string& public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
+    publicVise(public_vise){
 }
 
 Livre::Livre() {
-    emprunte_par = nullptr;
+    emprunte_par=nullptr;
     type = LIVRE;
 }
 
@@ -31,43 +28,43 @@ void Livre::setCode(int c) {
     code = c;
 }
 
-const string &Livre::getAuteur() const {
+const string& Livre::getAuteur() const {
     return auteur;
 }
 
-void Livre::setAuteur(const string &a) {
+void Livre::setAuteur(const string& a) {
     auteur = a;
 }
 
-const string &Livre::getTitre() const {
+const string& Livre::getTitre() const {
     return titre;
 }
 
-void Livre::setTitre(const string &t) {
+void Livre::setTitre(const string& t) {
     titre = t;
 }
 
-const string &Livre::getEditeur() const {
+const string& Livre::getEditeur() const {
     return editeur;
 }
 
-void Livre::setEditeur(const string &e) {
+void Livre::setEditeur(const string& e) {
     editeur = e;
 }
 
-const string &Livre::getIsbn() const {
+const string& Livre::getIsbn() const {
     return ISBN;
 }
 
-void Livre::setIsbn(const string &i) {
+void Livre::setIsbn(const string& i) {
     ISBN = i;
 }
 
-const string &Livre::getPublicVise() const {
+const string& Livre::getPublicVise() const {
     return publicVise;
 }
 
-void Livre::setPublicVise(const string &p) {
+void Livre::setPublicVise(const string& p) {
     publicVise = p;
 }
 
@@ -78,11 +75,15 @@ void Livre::affiche() {
     cout << "Editeur : " << editeur << endl;
     cout << "ISBN : " << ISBN << endl;
     cout << "Public visé : " << publicVise << endl;
-    if (emprunte_par != nullptr) {
-        cout << "Emprunté par : " << emprunte_par->getNom() << endl;
+    if (emprunte_par->getAdherent() != nullptr) {
+        cout << "Emprunté par : " << emprunte_par->getAdherent()->getNom() << " " << emprunte_par->getAdherent()->getPrenom() << endl;
     }
 }
 
+const Emprunteur Livre::getEmprunteur()
+{
+    return Emprunteur();
+}
 
 
 
