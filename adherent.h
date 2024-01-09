@@ -11,7 +11,7 @@ private :
   static int nbAdhérent;
   int numAdhérent;
   Blibliothèque bibliothèque;
-  List<Livre> livreEmpruntés;
+  Livre* livreEmpruntés;
   int maxEmprunt;
 public :
   Adhérent(); //assigne un num d'adhérent
