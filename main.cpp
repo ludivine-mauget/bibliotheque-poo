@@ -3,7 +3,6 @@
 //
 
 #include "BD.h"
-#include "Album.h"
 #include "Bibliotheque.h"
 #include "Adherent.h"
 #include "Livre.h"
@@ -15,3 +14,7 @@
 
 using namespace std;
 
+int main(){
+    cout << "Hello World !" << endl;
+    return 0;
+}

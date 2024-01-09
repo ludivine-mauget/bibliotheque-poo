@@ -3,8 +3,6 @@
 //
 
 #include "Livre.h"
-#include "Adherent.h"
-#include "Album.h"
 #include <iostream>
 #include <string>
 
@@ -16,7 +14,7 @@ Livre::Livre(int code, const string& auteur, const string& titre, const string& 
 }
 
 Livre::Livre() {
-    emprunte_par=nullptr;
+//    emprunte_par=nullptr;
     type = LIVRE;
 }
 
@@ -75,13 +73,7 @@ void Livre::affiche() {
     cout << "Editeur : " << editeur << endl;
     cout << "ISBN : " << ISBN << endl;
     cout << "Public visé : " << publicVise << endl;
-    if (emprunte_par->getAdherent() != nullptr) {
-        cout << "Emprunté par : " << emprunte_par->getAdherent()->getNom() << " " << emprunte_par->getAdherent()->getPrenom() << endl;
-    }
+//    if (emprunte_par->getAdherent() != nullptr) {
+//        cout << "Emprunté par : " << emprunte_par->getAdherent()->getNom() << " " << emprunte_par->getAdherent()->getPrenom() << endl;
+//    }
 }
-
-const Emprunteur Livre::getEmprunteur()
-{
-    return emprunte_par;
-}
-

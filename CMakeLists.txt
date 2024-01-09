@@ -6,9 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(bibliotheque-poo
-        Adherent.h
-        Album.cpp
-        Album.h
         Theatre.h
         Poesie.cpp
         Poesie.h
@@ -21,5 +18,7 @@ add_executable(bibliotheque-poo
         Livre.h
         Roman.cpp
         Theatre.cpp
-        main.cpp)
+        main.cpp
+        Adherent.cpp
+        Adherent.h)
 
