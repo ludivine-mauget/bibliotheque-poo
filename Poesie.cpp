@@ -2,23 +2,13 @@
 using namespace std;
 #include <iostream>
 
-Poésie::Poésie(const Poésie& poésie)
+Poesie::Poesie(Indic i)
 {
-  //oui
+    indicateur = i;
 }
 
-void Poésie::Affiche()
+void Poesie::affiche()
 {
-	if (indicateur == vers) {
-		affiche();
-		cout << "C'est un vers" << endl;
-	}
-	else if (indicateur == prose) {
-		affiche();
-		cout << "C'est une prose" << endl;
-	}
-	else {
-		affiche();
-		cout << "C'est une prose et un vers" << endl;
-	}
+	Livre::affiche();
+    cout << "Indicateur : " << indicateur << endl;
 }
