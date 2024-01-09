@@ -6,13 +6,13 @@
 class Emprunteur
 {
 private:
-	Bibliotheque biblio;
-	Adherent adherent;
+	Bibliotheque *biblio;
+	Adherent *adherent;
 public:
 	Emprunteur();
-	const Bibliotheque &getBiblio();
-	const Adherent &getAdherent();
-	void setBiblio(const Bibliotheque &bibliotheque);
-	void setAdherent(const Adherent &adherent);
+	const Bibliotheque* getBiblio();
+	const Adherent* getAdherent();
+	void setBiblio(Bibliotheque *bibliotheque);
+	void setAdherent(Adherent *adherent);
 };
 
