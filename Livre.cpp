@@ -82,8 +82,6 @@ void Livre::affiche() {
 
 const Emprunteur Livre::getEmprunteur()
 {
-    return Emprunteur();
+    return emprunte_par;
 }
-
-
 
