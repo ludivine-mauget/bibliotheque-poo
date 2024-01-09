@@ -11,7 +11,7 @@ add_executable(bibliotheque-poo
         Album.h
         Bibliotheque.h
         Livre.h
-        PieceDeTheatre.h
+        Theatre.h
         Poesie.cpp
         Poesie.h
         RecueilDePoesie.h
@@ -21,5 +21,7 @@ add_executable(bibliotheque-poo
         Bibliotheque.cpp
         Bibliotheque.h
         Livre.cpp
-        Livre.h)
+        Livre.h
+        Roman.cpp
+        Theatre.cpp)
 
