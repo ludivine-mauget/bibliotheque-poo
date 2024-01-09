@@ -12,6 +12,7 @@ private:
 	string auteur;
 	string titre;
 	string editeur;
+	string ISBN;
 	PublicV publicVisé;
 	Etat état;
 };
