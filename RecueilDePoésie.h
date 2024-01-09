@@ -4,7 +4,7 @@ using namespace std;
 
 enum Indic{vers,prose,both};
 
-class RecueilDePoésie :
+class RecueilDePoesie :
     public Livre
 {
 private:

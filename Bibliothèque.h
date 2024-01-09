@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
-#include "Adhérent.h"
+#include "adherent.h"
 #include "Livre.h"
 using namespace std;
 
-class Bibliothèque
+class Bibliotheque
 {
 private:
 	string nom;
@@ -12,9 +12,9 @@ private:
 	string code;
 	Livre* livres;
 public:
-	Bibliothèque();
-	Bibliothèque(string n, string a, string c);
-	~Bibliothèque();
+	Bibliotheque();
+	Bibliotheque(string n, string a, string c);
+	~Bibliotheque();
 	void DemanderLivre(string isbn);
 	void AcheterNouveauLivre(Livre l);
 	void SupprimerLivre(string codeLivre);

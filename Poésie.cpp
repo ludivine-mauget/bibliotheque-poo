@@ -1,13 +1,13 @@
-#include "Poésie.h"
+#include "Poesie.h"
 using namespace std;
 #include <iostream>
 
-Poésie::Poésie(const Poésie& poésie)
+Poesie::Poesie(const Poesie& poesie)
 {
   //oui
 }
 
-void Poésie::Affiche()
+void Poesie::Affiche()
 {
 	if (indicateur == vers) {
 		affiche();

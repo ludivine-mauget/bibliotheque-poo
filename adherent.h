@@ -1,23 +1,23 @@
 #include <iostream>
-using namesapce std;
+using namespace std;
 #include "Bibliothèque.h"
 #include "Livre.h"
 
-class Adhérent
+class Adherent
 {
 private :
   string nom;
-  string prénom;
+  string prenom;
   string adresse;
-  static int nbAdhérent;
-  int numAdhérent;
-  Blibliothèque bibliothèque;
-  Livre* livreEmpruntés;
+  static int nbAdherent;
+  int numAdherent;
+  Bibliotheque bibliotheque;
+  Livre* livreEmpruntes;
   int maxEmprunt;
 public :
-  Adhérent(); //assigne un num d'adhérent
-  Adhérent(String n, String p); //avec nom, prémnom
-  ~Adhérent();
+  Adherent(); //assigne un num d'adhérent
+  Adherent(String n, String p); //avec nom, prémnom
+  ~Adherent();
   void Emprunter(String code);
   void Rendre(Livre livre);
-}
+};
