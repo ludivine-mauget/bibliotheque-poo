@@ -47,22 +47,20 @@ void Bibliotheque::afficheLivres(string categorie) {
     }
 }
 
-
-
 void Bibliotheque::rendreLivre(string isbn) {
     // TODO : rendre le livre grâce au code
 }
 
-void Bibliotheque::acheterLivre(Livre livre) {
-    // TODO : est-ce qu'utiliser un set est la bonne solution ?
+void Bibliotheque::acheterLivre(const Livre& livre) {
+    livres.push_back((Livre*)&livre);
 }
 
-void Bibliotheque::supprimerLivre(Livre livre) {
-    // TODO : update notation vecteur
+void Bibliotheque::supprimerLivre(const Livre& livre) {
+
 }
 
-void Bibliotheque::ajouterAdherent(Adherent adherent) {
-    // TODO : update notation vecteur
+void Bibliotheque::ajouterAdherent(const Adherent& adherent) {
+    adherents.push_back((Adherent*)&adherent);
 }
 
 void Bibliotheque::supprimerAdherent(Adherent adherent) {

@@ -9,7 +9,6 @@
 #include "Poesie.h"
 #include "Roman.h"
 #include "Theatre.h"
-#include "Album.h"
 
 #include <iostream>
 
@@ -17,22 +16,25 @@ using namespace std;
 
 int main(){
     cout << "Hello World !" << endl;
-    // Creer un livre avec le constructeur de la classe Livre
-    Livre l1(1, "Victor Hugo", "Les Misérables", "Gallimard", "978-2-07-041699-3", "Adultes");
 
-    Roman r1(2, "Albert Camus", "L'Etranger", "Gallimard", "978-2-07-036002-4", "Adulte", "Fiction Philosophique");
+    Bibliotheque bibliotheque("Alcazar", 5);
 
-    l1.affiche();
-    r1.affiche();
+    Livre *livre1 = new Livre(1, "Mauget", "Ludivine", "1 Rue de la Paix", "123456789", "Tout public");
 
+    Adherent *adherent1 = new Adherent("Mauget", "Ludivine", "1 Rue de la Paix", &bibliotheque);
+    Adherent *adherent2 = new Adherent("Massif", "Ludivine", "2 Rue de la Paix", &bibliotheque);
 
-    Bibliotheque b1("Bibliothèque de la ville", 100);
+    bibliotheque.ajouterAdherent(*adherent1);
+    bibliotheque.ajouterAdherent(*adherent2);
 
-    Adherent a1("Mauget", "Ludivine", "1 rue de la Paix Dieu", &b1);
-    Adherent a2("Massif", "Damien", "1 rue de la Paix Dieu", &b1);
-    Adherent a3("Bernard", "Kévin", "2 rue de la Paix Dieu", &b1);
-    a1.afficheAdherent();
+    bibliotheque.acheterLivre(*livre1);
 
-    Album album1(3, "Maurice Sendak", "Max et les Maximonstres", "Ecole des loisirs", "978-2-211-01025-9", "Enfants", PHOTO);
+    bibliotheque.afficheBibliotheque();
+    livre1->affiche();
+    adherent1->afficheAdherent();
+    adherent2->afficheAdherent();
+    bibliotheque.afficheAdherents();
+    bibliotheque.afficheLivres();
+
     return 0;
 }
