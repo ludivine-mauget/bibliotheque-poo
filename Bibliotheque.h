@@ -36,7 +36,8 @@ public:
     void setNbLivresMax(int nbLivresMax);
     int getNbLivresMax();
     vector<Adherent*> getAdherents();
-    int getIndiceLivre(int code);
+    template<typename T>
+    int getIndiceLivre(T arg);
     int getIndiceEmprunt(const string& isbn);
     void afficheLivresEmpruntes();
     Livre getLivre(int indice);

@@ -82,19 +82,23 @@ void Bibliotheque::supprimerLivre(const Livre& livre) {
     livres.erase(livres.begin() + indice);
 }
 
-
-int Bibliotheque::getIndiceLivre(int code) {
+template <typename T>
+int Bibliotheque::getIndiceLivre(T arg) {
     int i = 0;
-    try {
-    for (auto c : livres) {
-        if (c->getCode() == code) {
-            return i;
+    try{
+        for (auto l: livres) {
+            if constexpr (is_same<T, string>::value) {
+                if (l->getIsbn() == arg) {
+                    return i;
+                }
+            } else if constexpr (is_same<T, int>::value) {
+                if (l->getCode() == arg) {
+                    return i;
+                }
+            }
+            i++;
         }
-        i++;
-        if (i == livres.size()) {
-            throw runtime_error("Le livre n'existe pas");
-        }
-    }
+    throw runtime_error("Le livre n'existe pas");
     } catch (runtime_error &e) {
         cerr << "Exception trouvée : " << e.what() << endl;
     }
