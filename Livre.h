@@ -30,8 +30,8 @@ public:
     void setIsbn(const string& isbn);
     const string& getPublicVise() const;
     void setPublicVise(const string& publicVise);
-    const string& getEtat() const;
-    void setEtat(const string& etat);
+    const bool& getEtat() const;
+    void setEtat(const bool& etat);
     virtual void affiche();
     // redéfinition de l'opérateur -
 //  const Emprunteur getEmprunteur();
@@ -46,7 +46,7 @@ protected:
     string editeur;
     string ISBN;
     string publicVise;
-    string etat;
+    bool etat;
 //    Emprunteur *emprunte_par; TODO
 };
 
