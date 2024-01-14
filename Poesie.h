@@ -2,14 +2,16 @@
 #include "Livre.h"
 using namespace std;
 
-enum Indic {VERS, PROSE, BOTH };
 
 class Poesie : public Livre
 {
 private:
-    Indic indicateur;
+    string indicateur;
 public:
-    Poesie(Indic);
-    void affiche();
+    Poesie();
+    Poesie(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn, const string& public_vise, const string& indic);
+    const string& getIndicateur() const;
+    void setIndicateur(const string& indic);
+    void Affiche();
 };
 

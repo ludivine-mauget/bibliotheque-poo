@@ -14,6 +14,8 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibl
     this->bibliotheque = bibliotheque;
 }
 
+Adherent::~Adherent() = default;
+
 const string &Adherent::getNom() const {
     return nom;
 }
