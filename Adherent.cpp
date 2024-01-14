@@ -6,12 +6,14 @@
 
 int Adherent::nbAdherent = 0;
 
-Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque) {
+Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque, int maxEmprunt) {
     this->nom = nom;
     this->prenom = prenom;
     this->adresse = adresse;
     this->idAdherent = nbAdherent++; // on donne un id a l'adherent et on incremente le nombre d'adherent
     this->bibliotheque = bibliotheque;
+    nbMaxEmprunt = maxEmprunt;
+    nbEmprunt = 0;
 }
 
 Adherent::~Adherent() = default;
@@ -44,12 +46,39 @@ const int& Adherent::getIdAdherent() const {
     return idAdherent;
 }
 
+void Adherent::setMaxEmprunt(const int& max)
+{
+    /*vector<Livre*> newLivresEmpruntes = 
+    nbMaxEmprunt = max;*/
+}
+
+const int& Adherent::getMaxEmprunt() const
+{
+    return nbMaxEmprunt;
+}
+
 void Adherent::emprunterLivre(int codeLivre) {
     int id = bibliotheque->getIndiceLivre(codeLivre);
-    if (bibliotheque->getLivre(id).getEtat() == false) {
-        //vérifier si il peut emprunter(try/catch)
-        // ajouter livre dans livres
-        bibliotheque->setLivre(id)->setEtat(true);
+    try {
+        if (bibliotheque->getLivre(id).getEtat() == false) {
+            if (nbEmprunt < nbMaxEmprunt) {
+                //liste chaîné
+                nbEmprunt++;
+            }
+            else {
+                throw 0;
+            }
+        }
+        else {
+            throw false;
+        }
+    }
+    catch(int n) 
+    {
+        cout << nom << " " << prenom << " ne peut plus emprunter de livre." << endl;        
+    }
+    catch (bool b) {
+        cout << "La bibliothèque " << bibliotheque->getNom() << "a déjà prêter ce livre" << endl;
     }
 }
 
