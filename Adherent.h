@@ -1,7 +1,9 @@
+#pragma once
+
 #include <iostream>
-using namespace std;
 #include "Bibliotheque.h"
-#include "Livre.h"
+
+using namespace std;
 
 class Adherent
 {
@@ -33,4 +35,4 @@ public:
 	const Livre* getLivres() const;
 	const int& getMaxEmprunt() const;
 	void setMaxEmprunt(const int& seuil);
-}
+};

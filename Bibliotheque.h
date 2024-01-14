@@ -1,20 +1,18 @@
 #pragma once
 
-#ifndef BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
-#define BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
-
 #include <iostream>
 #include <set>
 #include <string>
-#include "Adherent.h"
 #include "Livre.h"
+#include "Adherent.h"
+
 using namespace std;
 
 class Bibliotheque
 {
 private:
 	string nom;
-	set<Adherent> adherents;
+	set<Adherent> adherents{};
     set<Livre> livres;
     int nbLivresMax;
 public:
@@ -38,5 +36,3 @@ public:
     set<Adherent> getAdherents();
     Livre getLivre(string isbn);
 };
-
-#endif //BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

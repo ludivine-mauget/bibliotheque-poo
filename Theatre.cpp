@@ -3,7 +3,6 @@
 //
 
 #include "Theatre.h"
-#include <iostream>
 
 using namespace std;
 

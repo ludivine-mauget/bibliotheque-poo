@@ -7,7 +7,7 @@ include_directories(.)
 
 add_executable(bibliotheque-poo
         Adherent.h
-        Album.cpp
+        Adherent.cpp
         Album.h
         Theatre.h
         Poesie.cpp
@@ -21,7 +21,5 @@ add_executable(bibliotheque-poo
         Livre.h
         Roman.cpp
         Theatre.cpp
-        Emprunteur.h
-        Emprunteur.cpp
         main.cpp)
 

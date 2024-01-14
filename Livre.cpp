@@ -3,10 +3,7 @@
 //
 
 #include "Livre.h"
-#include "Adherent.h"
-#include "Album.h"
-#include <iostream>
-#include <string>
+
 
 using namespace std;
 

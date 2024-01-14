@@ -4,10 +4,10 @@ using namespace std;
 
 enum Illu {photo, dessin, both};
 
-class Album : public Livre {
+class Adherent : public Livre {
     private:
         Illu illustrations;
     public :
-        Album(Illu);
-        Album affiche();
+        Adherent(Illu);
+        Adherent affiche();
 };

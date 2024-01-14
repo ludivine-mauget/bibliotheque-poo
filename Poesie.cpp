@@ -1,6 +1,4 @@
 #include "Poesie.h"
-using namespace std;
-#include <iostream>
 
 Poesie::Poesie(Indic i)
 {
