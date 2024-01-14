@@ -24,9 +24,9 @@ public:
     void afficheBibliotheque();
     void afficheAdherents();
     void afficheLivres();
-    void afficheLivres(string categorie);
-    void preterLivre(Bibliotheque bibliotheque, string isbn);
-    void rendreLivre(string isbn);
+    void afficheLivres(const string& categorie);
+    void emprunterLivre(const string& isbn, Bibliotheque bibliotheque);
+    void rendreLivre(string isbn, Bibliotheque bibliotheque);
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
     void ajouterAdherent(const Adherent& adherent);
@@ -36,8 +36,8 @@ public:
     void setNbLivresMax(int nbLivresMax);
     int getNbLivresMax();
     vector<Adherent*> getAdherents();
-    Livre getLivre(string isbn);
     int getIndiceLivre(int code);
+    int getIndiceEmprunt(const string& isbn);
     void afficheLivresEmpruntes();
     Livre getLivre(int indice);
 };

@@ -41,12 +41,20 @@ void Bibliotheque::afficheLivres() {
     }
 }
 
-void Bibliotheque::afficheLivres(string categorie) {
+void Bibliotheque::afficheLivres(const string& categorie) {
     for (auto livre : livres) {
-        if (livre->getPublicVise() == categorie) { // TODO: catégorie soit public visé soit type de livre (roman, album, etc.)
+        if (livre->getPublicVise() == categorie) {
             cout << livre->getTitre() << endl;
         }
     }
+}
+
+void Bibliotheque::emprunterLivre(const string& isbn, Bibliotheque bibliotheque) {
+    int indice = bibliotheque.getIndiceLivre(isbn); // On cherche l'indice du livre dans la bibliothèque à laquelle on emprunte
+    Livre livre = bibliotheque.getLivre(indice); // On crée une copie du livre dans notre bibliothèque
+    livresEmpruntes.push_back(&livre); // On ajoute le livre à la liste des livres empruntés
+    livres.push_back(&livre); // On ajoute le livre à la liste des livres de notre bibliothèque
+    bibliotheque.getLivre(indice).setEtat(true); // On change l'état du livre dans la bibliothèque à laquelle on emprunte
 }
 
 void Bibliotheque::afficheLivresEmpruntes() {
@@ -55,8 +63,14 @@ void Bibliotheque::afficheLivresEmpruntes() {
     }
 }
 
-void Bibliotheque::rendreLivre(string isbn) {
-    // TODO : rendre le livre grâce au code
+void Bibliotheque::rendreLivre(string isbn, Bibliotheque bibliotheque) {
+    int indice = getIndiceEmprunt(isbn); // On cherche l'indice du livre dans la liste des livres empruntés
+    int indice1 = getIndiceLivre(isbn); // On cherche l'indice du livre dans la liste des livres de notre bibliothèque
+    getLivre(indice).~Livre(); // On supprime le livre
+    livresEmpruntes.erase(livresEmpruntes.begin() + indice); // On supprime le livre de la liste des livres empruntés
+    livres.erase(livres.begin() + indice1); // On supprime le livre de la liste des livres de notre bibliothèque
+    int indice2 = bibliotheque.getIndiceLivre(isbn); // On cherche l'indice du livre dans la liste des livres de notre bibliothèque
+    bibliotheque.getLivre(indice2).setEtat(false); // On change l'état du livre dans la bibliothèque à laquelle on emprunte
 }
 
 void Bibliotheque::acheterLivre(const Livre& livre) {
@@ -81,6 +95,24 @@ int Bibliotheque::getIndiceLivre(int code) {
             throw runtime_error("Le livre n'existe pas");
         }
     }
+    } catch (runtime_error &e) {
+        cerr << "Exception trouvée : " << e.what() << endl;
+    }
+    return -1;
+}
+
+int Bibliotheque::getIndiceEmprunt(const string& isbn) {
+    int i = 0;
+    try {
+        for (auto l : livresEmpruntes) {
+            if (l->getIsbn() == isbn) {
+                return i;
+            }
+            i++;
+            if (i == livresEmpruntes.size()) {
+                throw runtime_error("Le livre n'existe pas");
+            }
+        }
     } catch (runtime_error &e) {
         cerr << "Exception trouvée : " << e.what() << endl;
     }
