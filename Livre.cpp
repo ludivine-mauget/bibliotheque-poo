@@ -10,13 +10,13 @@ using namespace std;
 
 Livre::Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
     const string& public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
-    publicVise(public_vise){ etat = LIBRE;
+    publicVise(public_vise){ etat = false;
 }
 
 Livre::Livre() {
 //    emprunte_par=nullptr;
     type = LIVRE;
-    etat = LIBRE;
+    string = false;
 }
 
 Livre::~Livre() = default;
@@ -69,12 +69,12 @@ void Livre::setPublicVise(const string& p) {
     publicVise = p;
 }
 
-const etats& Livre::getEtat() const
+const bool& Livre::getEtat() const
 {
     return etat;
 }
 
-void Livre::setEtat(const etats& etat)
+void Livre::setEtat(const bool& etat)
 {
     this->etat = etat;
 }
