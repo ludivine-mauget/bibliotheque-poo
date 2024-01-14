@@ -18,6 +18,8 @@ Livre::Livre() {
     type = LIVRE;
 }
 
+Livre::~Livre() = default;
+
 int Livre::getCode() const {
     return code;
 }

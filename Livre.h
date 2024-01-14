@@ -17,6 +17,7 @@ public:
     Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
         const string& public_vise);
     Livre();
+    ~Livre();
     int getCode() const;
     void setCode(int code);
     const string& getAuteur() const;
@@ -30,6 +31,7 @@ public:
     const string& getPublicVise() const;
     void setPublicVise(const string& publicVise);
     virtual void affiche();
+    // redéfinition de l'opérateur -
 //  const Emprunteur getEmprunteur();
     enum types { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
 

@@ -28,6 +28,7 @@ public:
     static int nbAdherent;
 
     Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque);
+    ~Adherent();
     const string &getNom() const;
     void setNom(const string &nom);
     const string &getPrenom() const;
