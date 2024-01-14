@@ -1,4 +1,4 @@
-//
+/
 // Created by Massif on 08/01/2024.
 //
 
@@ -16,7 +16,7 @@ Livre::Livre(int code, const string& auteur, const string& titre, const string& 
 Livre::Livre() {
 //    emprunte_par=nullptr;
     type = LIVRE;
-    string = false;
+    etat = false;
 }
 
 Livre::~Livre() = default;
