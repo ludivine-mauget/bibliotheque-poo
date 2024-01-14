@@ -21,5 +21,7 @@ add_executable(bibliotheque-poo
         Theatre.cpp
         main.cpp
         Adherent.cpp
-        Adherent.h)
+        Adherent.h
+        Album.h
+        Album.cpp)
 
