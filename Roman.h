@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BIBLIOTHEQUE_POO_ROMAN_H
+#define BIBLIOTHEQUE_POO_ROMAN_H
+
 #include "Livre.h"
 using namespace std;
 class Roman :
@@ -16,5 +18,6 @@ public :
 
     void setGenre(const string &genre);
 
-
 };
+
+#endif //BIBLIOTHEQUE_POO_ROMAN_H

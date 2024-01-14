@@ -1,21 +1,21 @@
-#pragma once
-
 #ifndef BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
 #define BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
 
 #include <iostream>
-#include <set>
+#include <vector>
 #include <string>
-#include "Adherent.h"
 #include "Livre.h"
+#include "Adherent.h"
 using namespace std;
+
+class Adherent;
 
 class Bibliotheque
 {
 private:
 	string nom;
-	set<Adherent> adherents;
-    set<Livre> livres;
+	vector<Adherent*> adherents;
+    vector<Livre*> livres;
     int nbLivresMax;
 public:
 	Bibliotheque();
@@ -30,13 +30,12 @@ public:
     void supprimerLivre(Livre livre);
     void ajouterAdherent(Adherent adherent);
     void supprimerAdherent(Adherent adherent);
-    void setNom(string nom);
+    void setNom(const string &nom);
     string getNom();
     void setNbLivresMax(int nbLivresMax);
     int getNbLivresMax();
-    void setAdherents(set<Adherent> adherents);
-    set<Adherent> getAdherents();
+    vector<Adherent*> getAdherents();
     Livre getLivre(string isbn);
 };
 
-#endif //BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
+#endif // BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

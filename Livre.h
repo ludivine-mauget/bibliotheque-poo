@@ -30,8 +30,8 @@ public:
     const string& getPublicVise() const;
     void setPublicVise(const string& publicVise);
     virtual void affiche();
-    const Emprunteur getEmprunteur();
-    enum types { LIVRE, BD, POESIE, ROMAN, PIECE, ALBUM };
+//  const Emprunteur getEmprunteur();
+    enum types { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
 
 protected:
     int type;
@@ -41,7 +41,7 @@ protected:
     string editeur;
     string ISBN;
     string publicVise;
-    Emprunteur *emprunte_par; // TODO
+//    Emprunteur *emprunte_par; TODO
 };
 
 
