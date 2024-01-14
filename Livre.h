@@ -18,6 +18,7 @@ public:
         const string& public_vise);
     Livre();
     ~Livre();
+    //Livre(const livre& livre)
     int getCode() const;
     void setCode(int code);
     const string& getAuteur() const;
