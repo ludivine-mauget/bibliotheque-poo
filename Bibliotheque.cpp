@@ -118,3 +118,7 @@ void Bibliotheque::setNbLivresMax(int nbLivresMax) {
     this->nbLivresMax = nbLivresMax;
 }
 
+Livre Bibliotheque::getLivre(int indice) {
+    return *livres[indice];
+}
+

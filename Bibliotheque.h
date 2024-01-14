@@ -39,6 +39,7 @@ public:
     Livre getLivre(string isbn);
     int getIndiceLivre(int code);
     void afficheLivresEmpruntes();
+    Livre getLivre(int indice);
 };
 
 #endif // BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H
