@@ -6,7 +6,7 @@
 
 int Adherent::nbAdherent = 0;
 
-Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque) {
+Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque) {
     this->nom = nom;
     this->prenom = prenom;
     this->adresse = adresse;
@@ -16,40 +16,48 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque *bibl
 
 Adherent::~Adherent() = default;
 
-const string &Adherent::getNom() const {
+const string& Adherent::getNom() const {
     return nom;
 }
 
-void Adherent::setNom(const string &nom) {
+void Adherent::setNom(const string& nom) {
     Adherent::nom = nom;
 }
 
-const string &Adherent::getPrenom() const {
+const string& Adherent::getPrenom() const {
     return prenom;
 }
 
-void Adherent::setPrenom(const string &prenom) {
+void Adherent::setPrenom(const string& prenom) {
     Adherent::prenom = prenom;
 }
 
-const string &Adherent::getAdresse() const {
+const string& Adherent::getAdresse() const {
     return adresse;
 }
 
-void Adherent::setAdresse(const string &adresse) {
+void Adherent::setAdresse(const string& adresse) {
     Adherent::adresse = adresse;
 }
 
-const int &Adherent::getIdAdherent() const {
+const int& Adherent::getIdAdherent() const {
     return idAdherent;
 }
 
-void Adherent::emprunterLivre(string codeLivre) {
-    // TODO : emprunter un livre
+void Adherent::emprunterLivre(int codeLivre) {
+    int id = bibliotheque->getIndiceLivre(codeLivre);
+    if (bibliotheque->getLivre(id).getEtat() == false) {
+        //vérifier si il peut emprunter(try/catch)
+        // ajouter livre dans livres
+        bibliotheque->setLivre(id)->setEtat(true);
+    }
 }
 
-void Adherent::rendreLivre(Livre *livre) {
-    // TODO : rendre un livre
+void Adherent::rendreLivre(Livre* livre) 
+{
+    //trouver livre
+    //changer son état
+    // enlever livre de livres
 }
 
 void Adherent::afficheAdherent() {
