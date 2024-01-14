@@ -5,6 +5,7 @@ using namespace std;
 Poesie::Poesie(Indic i)
 {
     indicateur = i;
+    this->type = POESIE;
 }
 
 void Poesie::affiche()
