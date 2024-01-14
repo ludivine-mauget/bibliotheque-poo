@@ -30,13 +30,13 @@ public:
     void setIsbn(const string& isbn);
     const string& getPublicVise() const;
     void setPublicVise(const string& publicVise);
-    const etats& getEtat() const;
-    void setEtat(const etats& etat);
+    const string& getEtat() const;
+    void setEtat(const string& etat);
     virtual void affiche();
     // redéfinition de l'opérateur -
 //  const Emprunteur getEmprunteur();
     enum types { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
-    enum etats {LIBRE, EMPRUNTE, PRETE};
+    
 
 protected:
     int type;
@@ -46,7 +46,7 @@ protected:
     string editeur;
     string ISBN;
     string publicVise;
-    etats etat;
+    string etat;
 //    Emprunteur *emprunte_par; TODO
 };
 
