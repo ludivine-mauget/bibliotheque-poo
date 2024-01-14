@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Bibliotheque; // peut etre que ça va casser apres
+class Bibliotheque;
 class Livre;
 
 class Adherent {
@@ -22,23 +22,23 @@ private:
     string prenom;
     string adresse;
     int idAdherent;
-    Bibliotheque *bibliotheque;
-    vector<Livre*> livresEmpruntes;
+    Bibliotheque* bibliotheque;
+    vector<Livre*> livresEmpruntes; //liste chaînée
 public:
     static int nbAdherent;
 
-    Adherent(string nom, string prenom, string adresse, Bibliotheque *bibliotheque);
+    Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque);
     ~Adherent();
-    const string &getNom() const;
-    void setNom(const string &nom);
-    const string &getPrenom() const;
-    void setPrenom(const string &prenom);
-    const string &getAdresse() const;
-    void setAdresse(const string &adresse);
-    const int &getIdAdherent() const;
+    const string& getNom() const;
+    void setNom(const string& nom);
+    const string& getPrenom() const;
+    void setPrenom(const string& prenom);
+    const string& getAdresse() const;
+    void setAdresse(const string& adresse);
+    const int& getIdAdherent() const;
 
     void emprunterLivre(string codeLivre);
-    void rendreLivre(Livre *livre);
+    void rendreLivre(Livre* livre);
     void afficheAdherent();
 
 
