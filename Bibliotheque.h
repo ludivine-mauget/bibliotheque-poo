@@ -16,6 +16,7 @@ private:
 	string nom;
 	vector<Adherent*> adherents;
     vector<Livre*> livres;
+    vector<Livre*> livresEmpruntes;
     int nbLivresMax;
 public:
 	Bibliotheque();
@@ -29,13 +30,15 @@ public:
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
     void ajouterAdherent(const Adherent& adherent);
-    void supprimerAdherent(Adherent adherent);
+    void supprimerAdherent(const Adherent& adherent);
     void setNom(const string &nom);
     string getNom();
     void setNbLivresMax(int nbLivresMax);
     int getNbLivresMax();
     vector<Adherent*> getAdherents();
     Livre getLivre(string isbn);
+    int getIndiceLivre(int code);
+    void afficheLivresEmpruntes();
 };
 
 #endif // BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

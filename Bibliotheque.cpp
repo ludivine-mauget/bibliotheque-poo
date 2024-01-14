@@ -25,6 +25,8 @@ void Bibliotheque::afficheBibliotheque() {
     afficheAdherents();
     cout << "Liste des livres : " << endl;
     afficheLivres();
+    cout << "Liste des livres empruntés : " << endl;
+    afficheLivresEmpruntes();
 }
 
 void Bibliotheque::afficheAdherents() {
@@ -47,6 +49,12 @@ void Bibliotheque::afficheLivres(string categorie) {
     }
 }
 
+void Bibliotheque::afficheLivresEmpruntes() {
+    for (auto livre : livresEmpruntes) {
+        cout << livre->getTitre() << endl;
+    }
+}
+
 void Bibliotheque::rendreLivre(string isbn) {
     // TODO : rendre le livre grâce au code
 }
@@ -56,15 +64,42 @@ void Bibliotheque::acheterLivre(const Livre& livre) {
 }
 
 void Bibliotheque::supprimerLivre(const Livre& livre) {
+    int indice = getIndiceLivre(livre.getCode());
+    livres.erase(livres.begin() + indice);
+}
 
+
+int Bibliotheque::getIndiceLivre(int code) {
+    int i = 0;
+    try {
+    for (auto c : livres) {
+        if (c->getCode() == code) {
+            return i;
+        }
+        i++;
+        if (i == livres.size()) {
+            throw runtime_error("Le livre n'existe pas");
+        }
+    }
+    } catch (runtime_error &e) {
+        cerr << "Exception trouvée : " << e.what() << endl;
+    }
+    return -1;
 }
 
 void Bibliotheque::ajouterAdherent(const Adherent& adherent) {
     adherents.push_back((Adherent*)&adherent);
 }
 
-void Bibliotheque::supprimerAdherent(Adherent adherent) {
-    //TODO : update notation vecteur
+void Bibliotheque::supprimerAdherent(const Adherent& adherent) {
+    int i = 0;
+    for (auto a : adherents) {
+        if (a->getIdAdherent() == adherent.getIdAdherent()) {
+            adherents.erase(adherents.begin() + i);
+            a->~Adherent();
+        }
+        i++;
+    }
 }
 
 string Bibliotheque::getNom(){
