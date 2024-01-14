@@ -3,6 +3,7 @@ project(bibliotheque-poo)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# compile utf8
 include_directories(.)
 
 add_executable(bibliotheque-poo
