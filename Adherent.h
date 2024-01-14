@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Bibliotheque;
+class Bibliotheque; // peut etre que ça va casser apres
 class Livre;
 
 class Adherent {
