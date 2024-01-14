@@ -9,6 +9,7 @@
 #include "Poesie.h"
 #include "Roman.h"
 #include "Theatre.h"
+#include "Album.h"
 
 #include <iostream>
 
@@ -32,5 +33,6 @@ int main(){
     Adherent a3("Bernard", "Kévin", "2 rue de la Paix Dieu", &b1);
     a1.afficheAdherent();
 
+    Album album1(3, "Maurice Sendak", "Max et les Maximonstres", "Ecole des loisirs", "978-2-211-01025-9", "Enfants", PHOTO);
     return 0;
 }
