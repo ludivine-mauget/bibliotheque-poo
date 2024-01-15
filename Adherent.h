@@ -9,6 +9,7 @@
 #include "Bibliotheque.h"
 #include "Livre.h"
 #include <string>
+#include "NoeudLivre.h"
 
 using namespace std;
 
@@ -22,8 +23,8 @@ private:
     string prenom;
     string adresse;
     int idAdherent;
-    Bibliotheque* bibliotheque;
-    vector<Livre*> livresEmpruntes; //liste chaînée
+    Bibliotheque *bibliotheque;
+    NoeudLivre *livres; //liste chaînée
     int nbEmprunt;
     int nbMaxEmprunt;
 public:
