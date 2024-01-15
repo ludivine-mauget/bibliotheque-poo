@@ -18,7 +18,7 @@ public:
         const string& public_vise);
     Livre();
     ~Livre();
-    //Livre(const livre& livre)
+    Livre(const Livre& livre);
     int getCode() const;
     void setCode(int code);
     const string& getAuteur() const;
@@ -37,7 +37,7 @@ public:
     // redéfinition de l'opérateur -
 //  const Emprunteur getEmprunteur();
     enum types { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
-    
+
 
 protected:
     int type;
@@ -48,7 +48,6 @@ protected:
     string ISBN;
     string publicVise;
     bool etat;
-//    Emprunteur *emprunte_par; TODO
 };
 
 
