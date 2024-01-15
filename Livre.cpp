@@ -10,16 +10,29 @@ using namespace std;
 
 Livre::Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
     const string& public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
-    publicVise(public_vise){ etat = false;
+    publicVise(public_vise) {
+    etat = false;
 }
 
 Livre::Livre() {
-//    emprunte_par=nullptr;
+    
     type = LIVRE;
     etat = false;
 }
 
 Livre::~Livre() = default;
+
+Livre::Livre(const Livre& livre)
+{
+    type = livre.type;
+    code = livre.code;
+    auteur = livre.auteur;
+    titre = livre.titre;
+    editeur = livre.editeur;
+    ISBN = livre.ISBN;
+    publicVise = livre.publicVise;
+    etat = livre.etat;
+}
 
 int Livre::getCode() const {
     return code;
@@ -86,7 +99,4 @@ void Livre::affiche() {
     cout << "Editeur : " << editeur << endl;
     cout << "ISBN : " << ISBN << endl;
     cout << "Public visé : " << publicVise << endl;
-//    if (emprunte_par->getAdherent() != nullptr) {
-//        cout << "Emprunté par : " << emprunte_par->getAdherent()->getNom() << " " << emprunte_par->getAdherent()->getPrenom() << endl;
-//    }
 }
