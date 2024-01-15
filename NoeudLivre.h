@@ -8,11 +8,10 @@ private:
 	NoeudLivre* suivant;
 public:
 	NoeudLivre();
-	NoeudLivre(Livre livre);
-	NoeudLivre(Livre livre, NoeudLivre* next);
-	const Livre& getLivre() const;
+	NoeudLivre(const Livre& livre);
+	Livre getLivre();
 	NoeudLivre& getSuivant();
-	void setLivre(const Livre& livre);
+	void setLivre(Livre& livre);
 	void setSuivant(NoeudLivre* suivant);
 };
 
