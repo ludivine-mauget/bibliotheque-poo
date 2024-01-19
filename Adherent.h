@@ -9,7 +9,7 @@
 #include "Bibliotheque.h"
 #include "Livre.h"
 #include <string>
-#include "NoeudLivre.h"
+#include "ListeLivre.h"
 
 using namespace std;
 
@@ -24,8 +24,7 @@ private:
     string adresse;
     int idAdherent;
     Bibliotheque *bibliotheque;
-    NoeudLivre *livres; //liste chaînée
-    int nbEmprunt;
+    ListeLivre livres; //liste chaînée
     int nbMaxEmprunt;
 public:
     static int nbAdherent;
@@ -43,7 +42,7 @@ public:
     const int& getMaxEmprunt() const;
 
     void emprunterLivre(int codeLivre);
-    void rendreLivre(Livre* livre);
+    void rendreLivre(Livre livre);
     void afficheAdherent();
 
 
