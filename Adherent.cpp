@@ -1,6 +1,4 @@
-//
-// Created by Massi on 09/01/2024.
-//
+using namespace std;
 
 #include "Adherent.h"
 
@@ -12,9 +10,8 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibl
     this->adresse = adresse;
     this->idAdherent = nbAdherent++; // on donne un id a l'adherent et on incremente le nombre d'adherent
     this->bibliotheque = bibliotheque;
-    livres = NULL;
+    livres = ListeLivre();
     nbMaxEmprunt = maxEmprunt;
-    nbEmprunt = 0;
 }
 
 Adherent::~Adherent() = default;
@@ -71,20 +68,7 @@ void Adherent::emprunterLivre(int codeLivre) {
     int id = bibliotheque->getIndiceLivre(codeLivre);
     try {
         if (bibliotheque->getLivre(id).getEtat() == false) {
-            if (nbEmprunt < nbMaxEmprunt) {
-                NoeudLivre *nouveau, *courant;
-                nouveau = new NoeudLivre(*new Livre(bibliotheque->getLivre(id)));
-                courant = livres;
-                while (&courant->getSuivant() != NULL) {
-                    courant = &courant->getSuivant();
-                }
-                nouveau->setSuivant(NULL);
-                courant->setSuivant(nouveau);
-                nbEmprunt++;
-            }
-            else {
-                throw 0;
-            }
+            livres.AddLivre(bibliotheque->getLivre(id), *this);
         }
         else {
             throw bibliotheque->getNom();
@@ -99,14 +83,14 @@ void Adherent::emprunterLivre(int codeLivre) {
     }
 }
 
-void Adherent::rendreLivre(Livre* livre) 
+void Adherent::rendreLivre(Livre livre) 
 {
-    int id = bibliotheque->getIndiceLivre(livre->getCode());
-    bibliotheque->getLivre(id).setEtat(false);
-    NoeudLivre* old = livres;
-    livres = &livres->getSuivant();
-    delete old;
-    nbEmprunt--;
+    try {
+        livres.RemoveLivre(livre);
+    }
+    catch (string isbn) {
+        cout << "Adhérent n'a pas emprunté le livre référencé : " << isbn << endl;
+    }
 }
 
 void Adherent::afficheAdherent() {
@@ -116,9 +100,5 @@ void Adherent::afficheAdherent() {
     cout << "Id : " << idAdherent << endl;
     cout << "Bibliothèque : " << bibliotheque->getNom() << endl;
     cout << "Livres empruntés : " << endl;
-    NoeudLivre* courant = livres;
-    while (&courant->getSuivant() != NULL) {
-        courant->getLivre().affiche();
-        courant = &courant->getSuivant();
-    }
+    livres.affiche();
 }
