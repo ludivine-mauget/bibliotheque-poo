@@ -6,17 +6,17 @@
 #define BIBLIOTHEQUE_POO_LIVRE_H
 
 #include <iostream>
-#include "Bibliotheque.h"
-#include "Adherent.h"
 
 using namespace std;
 
 
 class Livre {
 public:
-    Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+    Livre(const string& auteur, const string& titre, const string& editeur, const string& isbn,
         const string& public_vise);
     Livre();
+    ~Livre();
+    Livre(const Livre& livre);
     int getCode() const;
     void setCode(int code);
     const string& getAuteur() const;
@@ -29,9 +29,12 @@ public:
     void setIsbn(const string& isbn);
     const string& getPublicVise() const;
     void setPublicVise(const string& publicVise);
+    const bool& getEtat() const;
+    void setEtat(const bool& etat);
+    const int& getType();
     virtual void affiche();
-    const Emprunteur getEmprunteur();
-    enum types { LIVRE, BD, POESIE, ROMAN, PIECE, ALBUM };
+    enum TYPE { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
+
 
 protected:
     int type;
@@ -41,7 +44,7 @@ protected:
     string editeur;
     string ISBN;
     string publicVise;
-    Emprunteur *emprunte_par; // TODO
+    bool etat;
 };
 
 

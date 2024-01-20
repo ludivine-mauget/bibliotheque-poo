@@ -1,64 +1,48 @@
+//
+// Created by Massi on 09/01/2024.
+//
+
+#ifndef BIBLIOTHEQUE_POO_ADHERENT_H
+#define BIBLIOTHEQUE_POO_ADHERENT_H
+
 #include <iostream>
-<<<<<<< HEAD
-<<<<<<< HEAD:adherent.h
-using namespace std;
-#include "Bibliothèque.h"
-=======
-using namesapce std;
-=======
-using namespace std;
->>>>>>> b890b1ceab0214d3df95a5c830ab7c8c42548353
-#include "Bibliotheque.h"
->>>>>>> 719fad0ce36091a60d2f8f04bfa16bbd037fa11d:Adherent.h
-#include "Livre.h"
+#include "NoeudLivre.h"
+#include <string>
 
-class Adherent
-{
-<<<<<<< HEAD
-private :
-  string nom;
-  string prenom;
-  string adresse;
-  static int nbAdherent;
-  int numAdherent;
-  Bibliotheque bibliotheque;
-  Livre* livreEmpruntes;
-  int maxEmprunt;
-public :
-  Adherent(); //assigne un num d'adhérent
-  Adherent(String n, String p); //avec nom, prémnom
-  ~Adherent();
-  void Emprunter(String code);
-  void Rendre(Livre livre);
-};
-=======
+class Bibliotheque;
+
+using namespace std;
+
+class Adherent {
 private:
-	string nom;
-	string prenom;
-	string adresse;
-	static int IdAdherent;
-	int nbAdherent;
-	Bibliotheque bibliotheque;
-	Livre* livreEmpruntes;
-	int maxEmprunt;
+    NoeudLivre* listeLivre; // premier livre du noeud
+    string nom;
+    string prenom;
+    string adresse;
+    int idAdherent;
+    Bibliotheque *bibliotheque;
+    int nbMaxEmprunt;
 public:
-	Adherent(); //assigne un num d'adherent
-	Adherent(string n, string p); //avec nom, premnom
-	~Adherent();
-	void Emprunter();
-	void Rendre();
+    Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque);
+    ~Adherent();
+    const string& getNom() const;
+    void setNom(const string& nom);
+    const string& getPrenom() const;
+    void setPrenom(const string& prenom);
+    const string& getAdresse() const;
+    void setAdresse(const string& adresse);
+    int getNbEmprunts();
+    const int& getIdAdherent() const;
+    void setIdAdherent(const int& id);
+    const int& getMaxEmprunt() const;
 
-	const string& getNom() const;
-	void setNom(const string& nom);
-	const string& getPrenom() const;
-	void setPrenom(const string& prenom);
-	const string& getAdresse() const;
-	void setAdresse(const string& adesse);
-	const int& getNbAdherent() const;
-	const Bibliotheque& getBibliotheque() const;
-	void setBibliotheque(const Bibliotheque& biblio);
-	const Livre* getLivres() const;
-	const int& getMaxEmprunt() const;
-	void setMaxEmprunt(const int& seuil);
-}
->>>>>>> b890b1ceab0214d3df95a5c830ab7c8c42548353
+    void ajouteLivre(Livre livre);
+    void supprimeLivre(Livre livre);
+
+    void emprunterLivre(int codeLivre);
+    void rendreLivre(int code);
+    void afficheAdherent();
+};
+
+
+#endif //BIBLIOTHEQUE_POO_ADHERENT_H

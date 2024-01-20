@@ -15,7 +15,7 @@ private :
     string genre;
 
 public :
-    Theatre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
+    Theatre(const string &auteur, const string &titre, const string &editeur, const string &isbn,
             const string &public_vise, const string &genre);
     Theatre(const Theatre* r);
     void affiche();

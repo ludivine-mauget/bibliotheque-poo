@@ -1,13 +1,23 @@
-#pragma once
+#ifndef BIBLIOTHEQUE_POO_ALBUM_H
+#define BIBLIOTHEQUE_POO_ALBUM_H
+
 #include "Livre.h"
 using namespace std;
 
-enum Illu {photo, dessin, both};
 
-class Album : public Livre {
-    private:
-        Illu illustrations;
-    public :
-        Album(Illu);
-        Album affiche();
+
+class Album : public Livre
+{
+public:
+    Album();
+    Album(const string& auteur, const string& titre, const string& editeur, const string& isbn,
+        const string& public_vise,const string& illu);
+    const string& getIllustration();
+    void SetIllustration(const string& illustration);
+    void affiche();
+
+private:
+    string illustration;
 };
+
+#endif //BIBLIOTHEQUE_POO_ALBUM_H

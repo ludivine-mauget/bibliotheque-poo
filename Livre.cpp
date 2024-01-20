@@ -1,23 +1,39 @@
+
 //
 // Created by Massif on 08/01/2024.
 //
 
 #include "Livre.h"
-#include "Adherent.h"
-#include "Album.h"
-#include <iostream>
-#include <string>
+
 
 using namespace std;
 
-Livre::Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+Livre::Livre(const string& auteur, const string& titre, const string& editeur, const string& isbn,
     const string& public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
-    publicVise(public_vise){
+    publicVise(public_vise) {
+    etat = false;
+    type = LIVRE;
+    code = 0;
 }
 
 Livre::Livre() {
-    emprunte_par=nullptr;
     type = LIVRE;
+    etat = false;
+    code = 0;
+}
+
+Livre::~Livre() = default;
+
+Livre::Livre(const Livre& livre)
+{
+    type = livre.type;
+    code = livre.code;
+    auteur = livre.auteur;
+    titre = livre.titre;
+    editeur = livre.editeur;
+    ISBN = livre.ISBN;
+    publicVise = livre.publicVise;
+    etat = livre.etat;
 }
 
 int Livre::getCode() const {
@@ -68,6 +84,21 @@ void Livre::setPublicVise(const string& p) {
     publicVise = p;
 }
 
+const bool& Livre::getEtat() const
+{
+    return etat;
+}
+
+void Livre::setEtat(const bool& etat)
+{
+    this->etat = etat;
+}
+
+const int& Livre::getType()
+{
+    return type;
+}
+
 void Livre::affiche() {
     cout << "Code : " << code << endl;
     cout << "Auteur : " << auteur << endl;
@@ -75,13 +106,4 @@ void Livre::affiche() {
     cout << "Editeur : " << editeur << endl;
     cout << "ISBN : " << ISBN << endl;
     cout << "Public visé : " << publicVise << endl;
-    if (emprunte_par->getAdherent() != nullptr) {
-        cout << "Emprunté par : " << emprunte_par->getAdherent()->getNom() << " " << emprunte_par->getAdherent()->getPrenom() << endl;
-    }
 }
-
-const Emprunteur Livre::getEmprunteur()
-{
-    return emprunte_par;
-}
-

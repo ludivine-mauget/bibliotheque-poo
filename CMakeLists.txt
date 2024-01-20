@@ -1,14 +1,12 @@
 cmake_minimum_required(VERSION 3.23)
 project(bibliotheque-poo)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
+# compile utf8
 include_directories(.)
 
 add_executable(bibliotheque-poo
-        Adherent.h
-        Album.cpp
-        Album.h
         Theatre.h
         Poesie.cpp
         Poesie.h
@@ -21,7 +19,12 @@ add_executable(bibliotheque-poo
         Livre.h
         Roman.cpp
         Theatre.cpp
-        Emprunteur.h
-        Emprunteur.cpp
-        main.cpp)
+        main.cpp
+        Adherent.cpp
+        Adherent.h
+        Album.h
+        Album.cpp
+        NoeudLivre.h
+        NoeudLivre.cpp
+)
 
