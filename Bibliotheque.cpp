@@ -8,11 +8,6 @@
 
 using namespace std;
 
-Bibliotheque::Bibliotheque() {
-    nom = "";
-    nbLivresMax = 0;
-}
-
 Bibliotheque::Bibliotheque(string nom, int nbLivresMax){
     this->nom = nom;
     this->nbLivresMax = nbLivresMax;

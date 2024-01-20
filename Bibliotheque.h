@@ -19,7 +19,6 @@ private:
     vector<Livre*> livresEmpruntes;
     int nbLivresMax;
 public:
-	Bibliotheque();
     Bibliotheque(string nom, int nbLivresMax);
     void afficheBibliotheque();
     void afficheAdherents();
