@@ -51,7 +51,7 @@ int main(){
 
     // Emprunt
     a1.emprunterLivre(1); // bd1 ok
-    a2.emprunterLivre(2); // theatre1 mais ça marche pas car mauvaise bibliotheque
+    a2.emprunterLivre(2);
     a2.emprunterLivre(3);
 
     // Affichage
@@ -62,6 +62,19 @@ int main(){
     a1.afficheAdherent();
     cout << "-------------------------" << endl;
     a2.afficheAdherent();
+    cout << "-------------------------" << endl;
+
+    // Rendre
+    a1.rendreLivre(0);
+
+    // Affichage
+    a1.afficheAdherent();
+    cout << "-------------------------" << endl;
+
+    b2.emprunterLivre("978-2-203-00112-0", b1);
+    b2.afficheBibliotheque();
+
+
 
 
     return 0;

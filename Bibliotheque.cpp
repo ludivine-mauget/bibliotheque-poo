@@ -76,9 +76,9 @@ void Bibliotheque::afficheLivres() {
     }
 }
 
-void Bibliotheque::afficheLivres(const string& categorie) {
+void Bibliotheque::afficheLivres(const int& categorie) {
     for (auto livre : livres) {
-        if (livre->getPublicVise() == categorie) {
+        if (livre->getType() == categorie) {
             cout << livre->getTitre() << endl;
         }
     }

@@ -94,6 +94,11 @@ void Livre::setEtat(const bool& etat)
     this->etat = etat;
 }
 
+const int& Livre::getType()
+{
+    return type;
+}
+
 void Livre::affiche() {
     cout << "Code : " << code << endl;
     cout << "Auteur : " << auteur << endl;

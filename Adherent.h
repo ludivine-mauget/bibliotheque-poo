@@ -40,7 +40,7 @@ public:
     void supprimeLivre(Livre livre);
 
     void emprunterLivre(int codeLivre);
-    void rendreLivre(Livre livre);
+    void rendreLivre(int code);
     void afficheAdherent();
 };
 

@@ -117,12 +117,17 @@ void Adherent::emprunterLivre(int codeLivre) {
     bibliotheque->getLivre(id).setEtat(true);
 }
 
-void Adherent::rendreLivre(Livre livre) 
+void Adherent::rendreLivre(int code)
 {
+    // vérifier que la liste n'est pas vide
+    if (listeLivre == nullptr) {
+        cout << this->getNom() << " n'a pas de livre à rendre." << endl;
+        return;
+    }
     // cherche livre dans listeLivre
     NoeudLivre *tmp = listeLivre;
     NoeudLivre *tmpPrec = nullptr;
-    while (tmp != nullptr && tmp->getLivre().getCode() != livre.getCode()) {
+    while (tmp != nullptr && tmp->getLivre().getCode() != code) {
         tmpPrec = tmp;
         tmp = tmp->getSuivant();
     }
@@ -132,11 +137,15 @@ void Adherent::rendreLivre(Livre livre)
         delete tmp;
     }
     else {
+        if (tmp == nullptr) {
+            cout << "Le livre n'est pas emprunté par " << this->getNom() << " " << this->getPrenom() << endl;
+            return;
+        }
         // on est au milieu ou à la fin de la liste
         tmpPrec->setSuivant(tmp->getSuivant());
         delete tmp;
     }
-    bibliotheque->getLivre(bibliotheque->getIndiceLivre(livre.getCode())).setEtat(false); // on change l'état du livre dans la bibliothèque
+    bibliotheque->getLivre(bibliotheque->getIndiceLivre(code)).setEtat(false); // on change l'état du livre dans la bibliothèque
 }
 
 void Adherent::afficheAdherent() {

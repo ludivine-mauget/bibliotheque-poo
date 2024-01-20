@@ -31,6 +31,7 @@ public:
     void setPublicVise(const string& publicVise);
     const bool& getEtat() const;
     void setEtat(const bool& etat);
+    const int& getType();
     virtual void affiche();
     enum TYPE { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
 
