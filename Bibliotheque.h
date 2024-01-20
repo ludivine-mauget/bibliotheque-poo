@@ -4,7 +4,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "Livre.h"
 #include "Adherent.h"
 using namespace std;
 

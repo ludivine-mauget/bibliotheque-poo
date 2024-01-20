@@ -12,10 +12,10 @@ private:
 	NoeudLivre *suivant;
 
 public :
-	NoeudLivre(const Livre& livre);
-    NoeudLivre(Livre livre, NoeudLivre *suivant);
+	explicit NoeudLivre(const Livre& l);
+    NoeudLivre(Livre l, NoeudLivre *next);
     NoeudLivre* getSuivant();
-    void setSuivant(NoeudLivre *suivant);
+    void setSuivant(NoeudLivre *next);
     Livre getLivre();
 };
 

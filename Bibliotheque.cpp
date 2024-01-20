@@ -3,15 +3,12 @@
 //
 
 #include "Bibliotheque.h"
-#include <iostream>
-#include <string>
+
 
 using namespace std;
 
 template <typename T>
 int Bibliotheque::getIndiceLivre(T arg) {
-    // This is the general template. It will be used if there's no specialization for the type of arg.
-    // You can leave it empty or add a default implementation.
 }
 
 template <>
@@ -48,10 +45,6 @@ int Bibliotheque::getIndiceLivre<int>(int arg) {
     return -1;
 }
 
-Bibliotheque::Bibliotheque() {
-    nom = "";
-    nbLivresMax = 0;
-}
 
 Bibliotheque::Bibliotheque(string nom, int nbLivresMax){
     this->nom = nom;

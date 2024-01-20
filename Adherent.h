@@ -6,10 +6,10 @@
 #define BIBLIOTHEQUE_POO_ADHERENT_H
 
 #include <iostream>
-#include "Bibliotheque.h"
-#include "Livre.h"
 #include "NoeudLivre.h"
 #include <string>
+
+class Bibliotheque;
 
 using namespace std;
 

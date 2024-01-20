@@ -1,6 +1,5 @@
-using namespace std;
-
 #include "Adherent.h"
+#include "Bibliotheque.h"
 
 int Adherent::nbAdherent = 0;
 
