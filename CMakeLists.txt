@@ -26,6 +26,5 @@ add_executable(bibliotheque-poo
         Album.cpp
         NoeudLivre.h
         NoeudLivre.cpp
-        ListeLivre.h
-        ListeLivre.cpp)
+)
 

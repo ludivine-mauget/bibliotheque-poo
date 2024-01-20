@@ -1,6 +1,7 @@
-#pragma once
+#ifndef BIBLIOTHEQUE_POO_NOEUDLIVRE_H
+#define BIBLIOTHEQUE_POO_NOEUDLIVRE_H
+
 #include "Livre.h"
-#include "ListeLivre.h"
 
 class NoeudLivre
 {
@@ -8,9 +9,15 @@ friend class ListeLivre;
 
 private:
 	Livre livre;
-	NoeudLivre* suivant;
+	NoeudLivre *suivant;
 
-	NoeudLivre(Livre livre) { this->livre = livre; }
-	NoeudLivre(Livre livre, NoeudLivre* noeud) { this->livre = livre; suivant = noeud; }	
+public :
+	NoeudLivre(const Livre& livre);
+    NoeudLivre(Livre livre, NoeudLivre *suivant);
+    NoeudLivre* getSuivant();
+    void setSuivant(NoeudLivre *suivant);
+    Livre getLivre();
+
 };
 
+#endif //BIBLIOTHEQUE_POO_NOEUDLIVRE_H

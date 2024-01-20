@@ -8,8 +8,8 @@
 #include <iostream>
 #include "Bibliotheque.h"
 #include "Livre.h"
+#include "NoeudLivre.h"
 #include <string>
-#include "ListeLivre.h"
 
 using namespace std;
 
@@ -18,18 +18,17 @@ class Livre;
 
 class Adherent {
 private:
-
+    NoeudLivre* listeLivre; // premier livre du noeud
     string nom;
     string prenom;
     string adresse;
     int idAdherent;
     Bibliotheque *bibliotheque;
-    ListeLivre livres; //liste chaînée
     int nbMaxEmprunt;
 public:
     static int nbAdherent;
 
-    Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliothequen, int maxEmprunt);
+    Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque);
     ~Adherent();
     const string& getNom() const;
     void setNom(const string& nom);
@@ -37,13 +36,18 @@ public:
     void setPrenom(const string& prenom);
     const string& getAdresse() const;
     void setAdresse(const string& adresse);
+    int getNbEmprunts();
     const int& getIdAdherent() const;
-    void setMaxEmprunt(const int& max);
     const int& getMaxEmprunt() const;
+
+    void ajouteLivre(Livre livre);
+    void supprimeLivre(Livre livre);
 
     void emprunterLivre(int codeLivre);
     void rendreLivre(Livre livre);
     void afficheAdherent();
+
+
 
 
 };
