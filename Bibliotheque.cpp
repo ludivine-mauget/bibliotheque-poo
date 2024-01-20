@@ -44,6 +44,22 @@ int Bibliotheque::getIndiceLivre<int>(int arg) {
     }
     return -1;
 }
+template <>
+int Bibliotheque::getIndiceLivre<const char*>(const char* arg) {
+    int i = 0;
+    try{
+        for (auto l: livres) {
+            if (l->getIsbn() == arg) {
+                return i;
+            }
+            i++;
+        }
+        throw runtime_error("Le livre n'existe pas");
+    } catch (runtime_error &e) {
+        cerr << "Exception trouvée : " << e.what() << endl;
+    }
+    return -1;
+}
 
 
 Bibliotheque::Bibliotheque(string nom, int nbLivresMax){
@@ -85,11 +101,15 @@ void Bibliotheque::afficheLivres(const int& categorie) {
 }
 
 void Bibliotheque::emprunterLivre(const string& isbn, Bibliotheque bibliotheque) {
-    int indice = bibliotheque.getIndiceLivre(isbn); // On cherche l'indice du livre dans la bibliothèque à laquelle on emprunte
-    Livre livre = bibliotheque.getLivre(indice); // On crée une copie du livre dans notre bibliothèque
-    livresEmpruntes.push_back(&livre); // On ajoute le livre à la liste des livres empruntés
-    livres.push_back(&livre); // On ajoute le livre à la liste des livres de notre bibliothèque
-    bibliotheque.getLivre(indice).setEtat(true); // On change l'état du livre dans la bibliothèque à laquelle on emprunte
+    int indice = bibliotheque.getIndiceLivre(isbn);
+    if (bibliotheque.getLivre(indice).getEtat()) {
+        cout << "Le livre est déjà emprunté" << endl;
+        return;
+    }
+    auto* livre = new Livre(bibliotheque.getLivre(indice));
+    livresEmpruntes.push_back(livre);
+    livres.push_back(livre);
+    bibliotheque.livres[indice]->setEtat(true);
 }
 
 void Bibliotheque::afficheLivresEmpruntes() {

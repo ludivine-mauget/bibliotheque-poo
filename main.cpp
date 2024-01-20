@@ -25,16 +25,16 @@ int main(){
     Roman roman1("Jules Verne", "Voyage au centre de la Terre", "Gallimard", "978-2-07-041699-3", "Tout public", "Aventure");
     Album album1("Bastien Vivès", "Le goût du chlore", "Casterman", "978-2-203-00112-0", "Tout public", "dessin");
     // Affichage des livres, on vérifie que tous les codes sont à 0
-    livre1.affiche();
-    cout << "-------------------------" << endl;
-    bd1.affiche();
-    cout << "-------------------------" << endl;
-    theatre1.affiche();
-    cout << "-------------------------" << endl;
-    roman1.affiche();
-    cout << "-------------------------" << endl;
-    album1.affiche();
-    cout << "-------------------------" << endl;
+    //livre1.affiche();
+    //cout << "-------------------------" << endl;
+    //bd1.affiche();
+    //cout << "-------------------------" << endl;
+    //theatre1.affiche();
+    //cout << "-------------------------" << endl;
+    //roman1.affiche();
+    //cout << "-------------------------" << endl;
+    //album1.affiche();
+    // cout << "-------------------------" << endl;
 
 
     Bibliotheque b1("Bibliothèque de l'Université de Lille", 5);
@@ -51,28 +51,40 @@ int main(){
 
     // Emprunt
     a1.emprunterLivre(1); // bd1 ok
-    a2.emprunterLivre(2);
-    a2.emprunterLivre(3);
+    a1.emprunterLivre(2); // theatre1 ok
+    a2.emprunterLivre(0);
+    a2.emprunterLivre(1);
 
     // Affichage
     b1.afficheBibliotheque();
     cout << "-------------------------" << endl;
     b2.afficheBibliotheque();
     cout << "-------------------------" << endl;
-    a1.afficheAdherent();
-    cout << "-------------------------" << endl;
-    a2.afficheAdherent();
-    cout << "-------------------------" << endl;
+    //a1.afficheAdherent();
+    //cout << "-------------------------" << endl;
+    //a2.afficheAdherent();
+    //cout << "-------------------------" << endl;
 
     // Rendre
-    a1.rendreLivre(0);
+    a1.rendreLivre(1);
+
+    // TINTIN
+    bool etat1 = b1.getLivre(b1.getIndiceLivre("978-2-203-00112-0")).getEtat();
+    cout << "Etat du livre : " << etat1 << endl;
+    cout << "-------------------------" << endl;
 
     // Affichage
-    a1.afficheAdherent();
-    cout << "-------------------------" << endl;
+    //a1.afficheAdherent();
+    //cout << "-------------------------" << endl;
 
     b2.emprunterLivre("978-2-203-00112-0", b1);
     b2.afficheBibliotheque();
+    cout << "-------------------------" << endl;
+
+    bool etat2 = b1.getLivre(b1.getIndiceLivre("978-2-203-00112-0")).getEtat();
+    cout << "Etat du livre : " << etat2 << endl;
+    cout << "-------------------------" << endl;
+
 
 
 
