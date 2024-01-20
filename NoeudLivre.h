@@ -11,7 +11,7 @@ public:
     NoeudLivre(Livre l, NoeudLivre* next);
 	Livre getLivre();
 	NoeudLivre* getSuivant();
-	void setLivre(Livre livre);
+	void setLivre(Livre l);
 	void setSuivant(NoeudLivre* next);
 };
 

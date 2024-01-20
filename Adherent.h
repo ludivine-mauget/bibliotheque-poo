@@ -12,23 +12,18 @@
 
 using namespace std;
 
-class Bibliotheque;
-class Livre;
-
 class Adherent {
 private:
-
     string nom;
     string prenom;
     string adresse;
     int idAdherent;
     Bibliotheque *bibliotheque;
-    NoeudLivre *livres; //liste chaînée
+    NoeudLivre *livres; //liste chaînée des livres empruntés
     int nbEmprunt;
     int nbMaxEmprunt;
 public:
     static int nbAdherent;
-
     Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliothequen, int maxEmprunt);
     ~Adherent();
     const string& getNom() const;
@@ -38,14 +33,10 @@ public:
     const string& getAdresse() const;
     void setAdresse(const string& adresse);
     const int& getIdAdherent() const;
-    void setMaxEmprunt(const int& max);
-    const int& getMaxEmprunt() const;
 
     void emprunterLivre(int codeLivre);
     void rendreLivre(Livre* livre);
     void afficheAdherent();
-
-
 };
 
 

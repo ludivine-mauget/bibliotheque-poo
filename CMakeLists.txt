@@ -23,5 +23,7 @@ add_executable(bibliotheque-poo
         Adherent.cpp
         Adherent.h
         Album.h
-        Album.cpp)
+        Album.cpp
+        NoeudLivre.cpp
+        NoeudLivre.h)
 
