@@ -6,7 +6,6 @@
 #include "Bibliotheque.h"
 #include "Adherent.h"
 #include "Livre.h"
-#include "NoeudLivre.h"
 #include "Roman.h"
 #include "Theatre.h"
 #include "BD.h"
@@ -23,7 +22,7 @@ int main(){
     BD bd1("Hergé", "Tintin", "Casterman", "978-2-203-00112-0", "Tout public", "Hergé");
     Theatre theatre1("Molière", "Le Bourgeois Gentilhomme", "Gallimard", "978-2-07-041699-3", "Tout public", "XVIIe siècle");
     Roman roman1("Jules Verne", "Voyage au centre de la Terre", "Gallimard", "978-2-07-041699-3", "Tout public", "Aventure");
-    Album album1("Bastien Vivès", "Le goût du chlore", "Casterman", "978-2-203-00112-0", "Tout public", "dessin");
+    Album album1("Bastien Vivès", "Le goût du chlore", "Casterman", "978-2-203-00112-1", "Tout public", "dessin");
     // Affichage des livres, on vérifie que tous les codes sont à 0
     //livre1.affiche();
     //cout << "-------------------------" << endl;
@@ -85,8 +84,13 @@ int main(){
     cout << "Etat du livre : " << etat2 << endl;
     cout << "-------------------------" << endl;
 
+    b2.rendreLivre("978-2-203-00112-0", b1);
+    b2.afficheBibliotheque();
+    cout << "-------------------------" << endl;
 
-
+    bool etat3 = b1.getLivre(b1.getIndiceLivre("978-2-203-00112-0")).getEtat();
+    cout << "Etat du livre : " << etat3 << endl;
+    cout << "-------------------------" << endl;
 
 
     return 0;

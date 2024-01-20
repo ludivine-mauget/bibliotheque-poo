@@ -24,7 +24,7 @@ public:
     void afficheLivres();
     void afficheLivres(const int& categorie);
     void emprunterLivre(const string& isbn, Bibliotheque bibliotheque);
-    void rendreLivre(string isbn, Bibliotheque bibliotheque);
+    void rendreLivre(const string& isbn, Bibliotheque bibliotheque);
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
     void ajouterAdherent(Adherent adherent);
