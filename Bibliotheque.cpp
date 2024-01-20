@@ -8,6 +8,46 @@
 
 using namespace std;
 
+template <typename T>
+int Bibliotheque::getIndiceLivre(T arg) {
+    // This is the general template. It will be used if there's no specialization for the type of arg.
+    // You can leave it empty or add a default implementation.
+}
+
+template <>
+int Bibliotheque::getIndiceLivre<string>(string arg) {
+    int i = 0;
+    try{
+        for (auto l: livres) {
+            if (l->getIsbn() == arg) {
+                return i;
+            }
+            i++;
+        }
+        throw runtime_error("Le livre n'existe pas");
+    } catch (runtime_error &e) {
+        cerr << "Exception trouvée : " << e.what() << endl;
+    }
+    return -1;
+}
+
+template <>
+int Bibliotheque::getIndiceLivre<int>(int arg) {
+    int i = 0;
+    try{
+        for (auto l: livres) {
+            if (l->getCode() == arg) {
+                return i;
+            }
+            i++;
+        }
+        throw runtime_error("Le livre n'existe pas");
+    } catch (runtime_error &e) {
+        cerr << "Exception trouvée : " << e.what() << endl;
+    }
+    return -1;
+}
+
 Bibliotheque::Bibliotheque() {
     nom = "";
     nbLivresMax = 0;
@@ -82,28 +122,7 @@ void Bibliotheque::supprimerLivre(const Livre& livre) {
     livres.erase(livres.begin() + indice);
 }
 
-template <typename T>
-int Bibliotheque::getIndiceLivre(T arg) {
-    int i = 0;
-    try{
-        for (auto l: livres) {
-            if constexpr (is_same<T, string>::value) {
-                if (l->getIsbn() == arg) {
-                    return i;
-                }
-            } else if constexpr (is_same<T, int>::value) {
-                if (l->getCode() == arg) {
-                    return i;
-                }
-            }
-            i++;
-        }
-    throw runtime_error("Le livre n'existe pas");
-    } catch (runtime_error &e) {
-        cerr << "Exception trouvée : " << e.what() << endl;
-    }
-    return -1;
-}
+
 
 int Bibliotheque::getIndiceEmprunt(const string& isbn) {
     int i = 0;

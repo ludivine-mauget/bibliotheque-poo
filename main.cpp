@@ -22,8 +22,8 @@ int main(){
     Livre *livre1 = new Livre(1, "Auteur1", "Titre1", "Editeur1", "11111", "Tout public");
     Livre *livre2 = new Livre(2, "Auteur2", "Titre2", "Editeur2", "22222", "Tout public");
 
-    Adherent *adherent1 = new Adherent("Mauget", "Ludivine", "1 Rue de la Paix", &bibliotheque);
-    Adherent *adherent2 = new Adherent("Massif", "Ludivine", "2 Rue de la Paix", &bibliotheque);
+    Adherent *adherent1 = new Adherent("Mauget", "Ludivine", "1 Rue de la Paix", &bibliotheque, 5);
+    Adherent *adherent2 = new Adherent("Massif", "Ludivine", "2 Rue de la Paix", &bibliotheque, 5);
 
     bibliotheque.ajouterAdherent(*adherent1);
     bibliotheque.ajouterAdherent(*adherent2);

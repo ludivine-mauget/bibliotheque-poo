@@ -6,8 +6,6 @@
 #define BIBLIOTHEQUE_POO_LIVRE_H
 
 #include <iostream>
-#include "Bibliotheque.h"
-#include "Adherent.h"
 
 using namespace std;
 
@@ -36,7 +34,7 @@ public:
     virtual void affiche();
     // redéfinition de l'opérateur -
 //  const Emprunteur getEmprunteur();
-    enum types { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
+    enum TYPE { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
 
 
 protected:

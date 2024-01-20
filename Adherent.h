@@ -7,7 +7,6 @@
 
 #include <iostream>
 #include "Bibliotheque.h"
-#include "Livre.h"
 #include <string>
 #include "NoeudLivre.h"
 

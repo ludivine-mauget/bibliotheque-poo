@@ -68,9 +68,9 @@ const int& Adherent::getMaxEmprunt() const
 }
 
 void Adherent::emprunterLivre(int codeLivre) {
-    int id = bibliotheque->getIndiceLivre(codeLivre);
+    int id = bibliotheque->getIndiceLivre(codeLivre); // on recupere l'indice du livre dans la bibliotheque
     try {
-        if (bibliotheque->getLivre(id).getEtat() == false) {
+        if (!bibliotheque->getLivre(id).getEtat()) { // si le livre est disponible
             if (nbEmprunt < nbMaxEmprunt) {
                 NoeudLivre *nouveau, *courant;
                 nouveau = new NoeudLivre(*new Livre(bibliotheque->getLivre(id)));
@@ -95,7 +95,7 @@ void Adherent::emprunterLivre(int codeLivre) {
         cout << nom << " " << prenom << " ne peut plus emprunter de livre." << endl;        
     }
     catch (string name) {
-        cout << "La bibliothèque " << name << "a déjà prêter ce livre" << endl;
+        cout << "La bibliothèque " << name << "a déjà prêté ce livre" << endl;
     }
 }
 

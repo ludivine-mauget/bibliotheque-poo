@@ -1,32 +1,32 @@
 #include "NoeudLivre.h"
 
-NoeudLivre::NoeudLivre()
-{
-	suivant = nullptr;
-}
-
 NoeudLivre::NoeudLivre(const Livre& livre)
 {
-	this->livre = livre;
-	suivant = nullptr;
+    this->livre = livre;
+    this->suivant = nullptr;
+}
+NoeudLivre::NoeudLivre(Livre l, NoeudLivre* next)
+{
+    this->livre = l;
+    this->suivant = next;
 }
 
 Livre NoeudLivre::getLivre()
 {
-	return livre;
+    return livre;
 }
 
-NoeudLivre& NoeudLivre::getSuivant()
+NoeudLivre* NoeudLivre::getSuivant()
 {
-	return *suivant;
+    return suivant;
 }
 
-void NoeudLivre::setLivre(Livre& livre)
+void NoeudLivre::setLivre(Livre livre)
 {
-	this->livre = livre;
+    this->livre = livre;
 }
 
-void NoeudLivre::setSuivant(NoeudLivre* suivant)
+void NoeudLivre::setSuivant(NoeudLivre* next)
 {
-	this->suivant = suivant;
+    this->suivant = next;
 }

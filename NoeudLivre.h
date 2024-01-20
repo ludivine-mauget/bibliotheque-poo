@@ -5,13 +5,13 @@ class NoeudLivre
 {
 private:
 	Livre livre;
-	NoeudLivre* suivant;
+	NoeudLivre*suivant;
 public:
-	NoeudLivre();
-	NoeudLivre(const Livre& livre);
+	explicit NoeudLivre(const Livre& livre);
+    NoeudLivre(Livre l, NoeudLivre* next);
 	Livre getLivre();
-	NoeudLivre& getSuivant();
-	void setLivre(Livre& livre);
-	void setSuivant(NoeudLivre* suivant);
+	NoeudLivre* getSuivant();
+	void setLivre(Livre livre);
+	void setSuivant(NoeudLivre* next);
 };
 
