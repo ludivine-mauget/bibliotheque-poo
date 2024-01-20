@@ -32,8 +32,6 @@ public:
     const bool& getEtat() const;
     void setEtat(const bool& etat);
     virtual void affiche();
-    // redéfinition de l'opérateur -
-//  const Emprunteur getEmprunteur();
     enum TYPE { LIVRE, BD, POESIE, ROMAN, THEATRE, ALBUM };
 
 

@@ -7,7 +7,7 @@
 BD::BD(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
        const string &public_vise, const string &dessinateur) : Livre(code, auteur, titre, editeur, isbn, public_vise) {
     this->dessinateur = dessinateur;
-    this->type = TYPE::BD;
+    this->type = BandeDessinee;
 }
 
 BD::BD() : Livre() {

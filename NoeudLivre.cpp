@@ -3,17 +3,13 @@
 NoeudLivre::NoeudLivre(const Livre& livre)
 {
     this->livre = livre;
-    this->suivant = nullptr;
-}
-NoeudLivre::NoeudLivre(Livre l, NoeudLivre* next)
-{
-    livre = l;
-    suivant = next;
+    suivant = NULL;
 }
 
-Livre NoeudLivre::getLivre()
+NoeudLivre::NoeudLivre(Livre livre, NoeudLivre *suivant)
 {
-    return livre;
+    this->livre = livre;
+    this->suivant = suivant;
 }
 
 NoeudLivre* NoeudLivre::getSuivant()
@@ -21,12 +17,12 @@ NoeudLivre* NoeudLivre::getSuivant()
     return suivant;
 }
 
-void NoeudLivre::setLivre(Livre l)
+void NoeudLivre::setSuivant(NoeudLivre *suivant)
 {
-    this->livre = l;
+    this->suivant = suivant;
 }
 
-void NoeudLivre::setSuivant(NoeudLivre* next)
+Livre NoeudLivre::getLivre()
 {
-    suivant = next;
+    return livre;
 }

@@ -2,13 +2,17 @@
 // Created by Ludivine Mauget on 09/01/2024.
 //
 
-#include "BD.h"
+
 #include "Bibliotheque.h"
 #include "Adherent.h"
 #include "Livre.h"
-#include "Poesie.h"
+#include "NoeudLivre.h"
 #include "Roman.h"
 #include "Theatre.h"
+#include "BD.h"
+#include "Album.h"
+
+
 
 #include <iostream>
 
@@ -16,24 +20,24 @@ using namespace std;
 
 int main(){
     cout << "Hello World !" << endl;
+    Livre l1(1, "Victor Hugo","Les Miserables" , "Gallimard", "978-2-07-041699-3", "Roman");
 
-    Bibliotheque bibliotheque("Alcazar", 5);
+    l1.affiche();
 
-    Livre *livre1 = new Livre(1, "Auteur1", "Titre1", "Editeur1", "11111", "Tout public");
-    Livre *livre2 = new Livre(2, "Auteur2", "Titre2", "Editeur2", "22222", "Tout public");
+    Bibliotheque b1("Bibliothèque de l'Université de Lille", 5);
+    Adherent a1("Mauget", "Ludivine", "Rue de la Paix", &b1);
 
-    Adherent *adherent1 = new Adherent("Mauget", "Ludivine", "1 Rue de la Paix", &bibliotheque, 5);
-    Adherent *adherent2 = new Adherent("Massif", "Ludivine", "2 Rue de la Paix", &bibliotheque, 5);
+    // Ajoute livre bib
+    b1.acheterLivre(l1);
 
-    bibliotheque.ajouterAdherent(*adherent1);
-    bibliotheque.ajouterAdherent(*adherent2);
+    cout << "-------------------------" << endl;
+    // Emprunt
+    a1.emprunterLivre(1);
 
-    bibliotheque.acheterLivre(*livre1);
-    bibliotheque.acheterLivre(*livre2);
 
-    int n = bibliotheque.getIndiceLivre(1);
-    int l = bibliotheque.getIndiceLivre(2);
-    int m = bibliotheque.getIndiceLivre(4);
+    // Affichage
+    b1.afficheBibliotheque();
+    a1.afficheAdherent();
 
     return 0;
 }

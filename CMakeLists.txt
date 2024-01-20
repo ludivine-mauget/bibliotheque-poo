@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.23)
 project(bibliotheque-poo)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 # compile utf8
 include_directories(.)
@@ -24,6 +24,7 @@ add_executable(bibliotheque-poo
         Adherent.h
         Album.h
         Album.cpp
+        NoeudLivre.h
         NoeudLivre.cpp
-        NoeudLivre.h)
+)
 
