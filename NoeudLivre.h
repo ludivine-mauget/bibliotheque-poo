@@ -17,7 +17,6 @@ public :
     NoeudLivre* getSuivant();
     void setSuivant(NoeudLivre *suivant);
     Livre getLivre();
-
 };
 
 #endif //BIBLIOTHEQUE_POO_NOEUDLIVRE_H

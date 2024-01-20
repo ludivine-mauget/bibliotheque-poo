@@ -155,6 +155,7 @@ void Adherent::afficheAdherent() {
     cout << "Id : " << idAdherent << endl;
     cout << "Bibliothèque : " << bibliotheque->getNom() << endl;
     cout << "Livres empruntés : " << endl;
+
     NoeudLivre* tmp = listeLivre;
     while (tmp != nullptr) {
         tmp->getLivre().affiche();

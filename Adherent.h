@@ -13,9 +13,6 @@
 
 using namespace std;
 
-class Bibliotheque;
-class Livre;
-
 class Adherent {
 private:
     NoeudLivre* listeLivre; // premier livre du noeud
@@ -46,10 +43,6 @@ public:
     void emprunterLivre(int codeLivre);
     void rendreLivre(Livre livre);
     void afficheAdherent();
-
-
-
-
 };
 
 
