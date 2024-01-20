@@ -5,10 +5,11 @@ Album::Album() :Livre()
 	illustration = "";
 }
 
-Album::Album(const int& code, const string& auteur, const string& titre, const string& editeur, const string& isbn, const string& public_vise, const string& illu):Livre(code,auteur,titre,editeur,isbn,public_vise)
+Album::Album(const string& auteur, const string& titre, const string& editeur, const string& isbn, const string& public_vise, const string& illu):Livre(auteur,titre,editeur,isbn,public_vise)
 {
 	this->type = ALBUM;
 	illustration = illu;
+    code = 0;
 }
 
 const string& Album::getIllustration()

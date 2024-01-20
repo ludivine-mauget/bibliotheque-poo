@@ -11,7 +11,7 @@ class BD : public Livre {
 private:
     string dessinateur;
 public:
-    BD(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
+    BD(const string &auteur, const string &titre, const string &editeur, const string &isbn,
        const string &public_vise, const string &dessinateur);
     BD();
     BD(const string &dessinateur);

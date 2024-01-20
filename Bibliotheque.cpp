@@ -49,6 +49,8 @@ int Bibliotheque::getIndiceLivre<int>(int arg) {
 Bibliotheque::Bibliotheque(string nom, int nbLivresMax){
     this->nom = nom;
     this->nbLivresMax = nbLivresMax;
+    numAdherent = 0;
+    idLivre = 0;
 }
 
 void Bibliotheque::afficheBibliotheque() {
@@ -107,7 +109,10 @@ void Bibliotheque::rendreLivre(string isbn, Bibliotheque bibliotheque) {
 }
 
 void Bibliotheque::acheterLivre(const Livre& livre) {
-    livres.push_back((Livre*)&livre);
+    auto* livre1 = new Livre(livre); // On crée une copie du livre
+    livres.push_back(livre1); // On ajoute la copie du livre à la liste des livres de notre bibliothèque
+    livre1->setCode(idLivre); // On change le code du livre
+    idLivre++; // On incrémente le code du livre
 }
 
 void Bibliotheque::supprimerLivre(const Livre& livre) {
@@ -135,8 +140,10 @@ int Bibliotheque::getIndiceEmprunt(const string& isbn) {
     return -1;
 }
 
-void Bibliotheque::ajouterAdherent(const Adherent& adherent) {
+void Bibliotheque::ajouterAdherent(Adherent adherent) {
     adherents.push_back((Adherent*)&adherent);
+    adherent.setIdAdherent(numAdherent);
+    numAdherent++;
 }
 
 void Bibliotheque::supprimerAdherent(const Adherent& adherent) {

@@ -19,25 +19,50 @@
 using namespace std;
 
 int main(){
-    cout << "Hello World !" << endl;
-    Livre l1(1, "Victor Hugo","Les Miserables" , "Gallimard", "978-2-07-041699-3", "Roman");
+    Livre livre1("Victor Hugo","Les Misérables" , "Gallimard", "978-2-07-041699-3", "Tout public");
+    BD bd1("Hergé", "Tintin", "Casterman", "978-2-203-00112-0", "Tout public", "Hergé");
+    Theatre theatre1("Molière", "Le Bourgeois Gentilhomme", "Gallimard", "978-2-07-041699-3", "Tout public", "XVIIe siècle");
+    Roman roman1("Jules Verne", "Voyage au centre de la Terre", "Gallimard", "978-2-07-041699-3", "Tout public", "Aventure");
+    Album album1("Bastien Vivès", "Le goût du chlore", "Casterman", "978-2-203-00112-0", "Tout public", "dessin");
+    // Affichage des livres, on vérifie que tous les codes sont à 0
+    livre1.affiche();
+    cout << "-------------------------" << endl;
+    bd1.affiche();
+    cout << "-------------------------" << endl;
+    theatre1.affiche();
+    cout << "-------------------------" << endl;
+    roman1.affiche();
+    cout << "-------------------------" << endl;
+    album1.affiche();
+    cout << "-------------------------" << endl;
 
-    l1.affiche();
 
     Bibliotheque b1("Bibliothèque de l'Université de Lille", 5);
+    Bibliotheque b2("Bibliothèque de Aix-Marseille", 4);
     Adherent a1("Mauget", "Ludivine", "Rue de la Paix", &b1);
+    Adherent a2("Massif", "Damien", "Rue de la République", &b2);
 
-    // Ajoute livre bib
-    b1.acheterLivre(l1);
+    // Ajoute livre bib, on vérifie que les codes sont incrémentés
+    b1.acheterLivre(livre1); // 0
+    b1.acheterLivre(bd1); // 1
+    b1.acheterLivre(theatre1); // 2
+    b2.acheterLivre(roman1); // 0
+    b2.acheterLivre(album1); // 1
 
-    cout << "-------------------------" << endl;
     // Emprunt
-    a1.emprunterLivre(1);
-
+    a1.emprunterLivre(1); // bd1 ok
+    a2.emprunterLivre(2); // theatre1 mais ça marche pas car mauvaise bibliotheque
+    a2.emprunterLivre(3);
 
     // Affichage
     b1.afficheBibliotheque();
+    cout << "-------------------------" << endl;
+    b2.afficheBibliotheque();
+    cout << "-------------------------" << endl;
     a1.afficheAdherent();
+    cout << "-------------------------" << endl;
+    a2.afficheAdherent();
+
 
     return 0;
 }

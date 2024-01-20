@@ -7,11 +7,12 @@
 
 using namespace std;
 
-Theatre::Theatre(int code, const string &auteur, const string &titre, const string &editeur, const string &isbn,
-                 const string &public_vise, const string &genre) : Livre(code, auteur, titre, editeur, isbn,
+Theatre::Theatre(const string &auteur, const string &titre, const string &editeur, const string &isbn,
+                 const string &public_vise, const string &genre) : Livre(auteur, titre, editeur, isbn,
                                                                          public_vise), genre(genre) {
     this->type = THEATRE;
     this->genre = genre;
+    code = 0;
 }
 
 Theatre::Theatre(const Theatre *r) {

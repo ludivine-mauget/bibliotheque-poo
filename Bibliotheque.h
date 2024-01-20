@@ -7,8 +7,6 @@
 #include "Adherent.h"
 using namespace std;
 
-class Adherent;
-
 class Bibliotheque
 {
 private:
@@ -17,6 +15,8 @@ private:
     vector<Livre*> livres;
     vector<Livre*> livresEmpruntes;
     int nbLivresMax;
+    int numAdherent;
+    int idLivre;
 public:
     Bibliotheque(string nom, int nbLivresMax);
     void afficheBibliotheque();
@@ -27,7 +27,7 @@ public:
     void rendreLivre(string isbn, Bibliotheque bibliotheque);
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
-    void ajouterAdherent(const Adherent& adherent);
+    void ajouterAdherent(Adherent adherent);
     void supprimerAdherent(const Adherent& adherent);
     void setNom(const string &nom);
     string getNom();

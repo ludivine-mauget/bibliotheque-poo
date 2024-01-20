@@ -6,12 +6,14 @@ Poesie::Poesie()
 {
 	indicateur = "";
 	this->type = POESIE;
+    code = 0;
 }
 
-Poesie::Poesie(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn, const string& public_vise, const string& indic) :Livre(code, auteur, titre, editeur, isbn, public_vise) 
+Poesie::Poesie(const string& auteur, const string& titre, const string& editeur, const string& isbn, const string& public_vise, const string& indic) :Livre(auteur, titre, editeur, isbn, public_vise)
 {
 	indicateur = indic; 
 	this->type = POESIE;
+    code = 0;
 }
 const string& Poesie::getIndicateur() const
 {

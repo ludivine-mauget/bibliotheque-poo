@@ -1,13 +1,11 @@
 #include "Adherent.h"
 #include "Bibliotheque.h"
 
-int Adherent::nbAdherent = 0;
-
 Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque) {
     this->nom = nom;
     this->prenom = prenom;
     this->adresse = adresse;
-    this->idAdherent = nbAdherent++; // on donne un id a l'adherent et on incremente le nombre d'adherent
+    idAdherent = 0; // on donne un id a l'adherent et on incremente le nombre d'adherent
     // Assignation de l'adhérent à la bibliothèque
     this->bibliotheque = bibliotheque;
     bibliotheque->ajouterAdherent(*this);
@@ -45,20 +43,10 @@ const int& Adherent::getIdAdherent() const {
     return idAdherent;
 }
 
-//void Adherent::setMaxEmprunt(const int& max)
-//{
-//    try {
-//        if (nbMaxEmprunt > max) {
-//            throw nbMaxEmprunt-max;
-//        }
-//        else {
-//            nbMaxEmprunt = max;
-//        }
-//    }
-//    catch (int n) {
-//        cout << nom << " " << prenom << " doit rendre " << n << " livre(s)." << endl;
-//    }
-//}
+void Adherent::setIdAdherent(const int& id) {
+    idAdherent = id;
+}
+
 
 const int& Adherent::getMaxEmprunt() const
 {
@@ -107,6 +95,10 @@ void Adherent::emprunterLivre(int codeLivre) {
         return;
     }
     int id = bibliotheque->getIndiceLivre(codeLivre);
+    if (id == -1) {
+        cout << "Le livre demandé n'existe pas dans la bibliothèque : " << bibliotheque->getNom() << endl;
+        return;
+    }
     try {
         if (!bibliotheque->getLivre(id).getEtat()) {
             ajouteLivre(bibliotheque->getLivre(id));
@@ -154,10 +146,9 @@ void Adherent::afficheAdherent() {
     cout << "Id : " << idAdherent << endl;
     cout << "Bibliothèque : " << bibliotheque->getNom() << endl;
     cout << "Livres empruntés : " << endl;
-
     NoeudLivre* tmp = listeLivre;
     while (tmp != nullptr) {
-        tmp->getLivre().affiche();
+        cout << tmp->getLivre().getTitre() << endl;
         tmp = tmp->getSuivant();
     }
 }

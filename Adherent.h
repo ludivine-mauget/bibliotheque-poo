@@ -23,8 +23,6 @@ private:
     Bibliotheque *bibliotheque;
     int nbMaxEmprunt;
 public:
-    static int nbAdherent;
-
     Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque);
     ~Adherent();
     const string& getNom() const;
@@ -35,6 +33,7 @@ public:
     void setAdresse(const string& adresse);
     int getNbEmprunts();
     const int& getIdAdherent() const;
+    void setIdAdherent(const int& id);
     const int& getMaxEmprunt() const;
 
     void ajouteLivre(Livre livre);

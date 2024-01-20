@@ -8,16 +8,18 @@
 
 using namespace std;
 
-Livre::Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+Livre::Livre(const string& auteur, const string& titre, const string& editeur, const string& isbn,
     const string& public_vise) : code(code), auteur(auteur), titre(titre), editeur(editeur), ISBN(isbn),
     publicVise(public_vise) {
     etat = false;
+    type = LIVRE;
+    code = 0;
 }
 
 Livre::Livre() {
-    
     type = LIVRE;
     etat = false;
+    code = 0;
 }
 
 Livre::~Livre() = default;

@@ -12,7 +12,7 @@ using namespace std;
 
 class Livre {
 public:
-    Livre(int code, const string& auteur, const string& titre, const string& editeur, const string& isbn,
+    Livre(const string& auteur, const string& titre, const string& editeur, const string& isbn,
         const string& public_vise);
     Livre();
     ~Livre();
