@@ -159,9 +159,9 @@ int Bibliotheque::getIndiceEmprunt(const string& isbn) {
     return -1;
 }
 
-void Bibliotheque::ajouterAdherent(Adherent adherent) {
-    adherents.push_back((Adherent*)&adherent);
-    adherent.setIdAdherent(numAdherent);
+void Bibliotheque::ajouterAdherent(Adherent* adherent) {
+    adherents.push_back(adherent);
+    adherent->setIdAdherent(numAdherent);
     numAdherent++;
 }
 

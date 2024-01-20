@@ -8,7 +8,7 @@ Adherent::Adherent(string nom, string prenom, string adresse, Bibliotheque* bibl
     idAdherent = 0; // on donne un id a l'adherent et on incremente le nombre d'adherent
     // Assignation de l'adhérent à la bibliothèque
     this->bibliotheque = bibliotheque;
-    bibliotheque->ajouterAdherent(*this);
+    bibliotheque->ajouterAdherent(this);
     nbMaxEmprunt = bibliotheque->getNbLivresMax();
     listeLivre = nullptr;
 }

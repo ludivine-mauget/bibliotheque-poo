@@ -27,7 +27,7 @@ public:
     void rendreLivre(const string& isbn, Bibliotheque bibliotheque);
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
-    void ajouterAdherent(Adherent adherent);
+    void ajouterAdherent(Adherent* adherent);
     void supprimerAdherent(const Adherent& adherent);
     void setNom(const string &nom);
     string getNom();
