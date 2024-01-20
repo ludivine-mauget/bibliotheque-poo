@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BIBLIOTHEQUE_POO_ALBUM_H
+#define BIBLIOTHEQUE_POO_ALBUM_H
+
 #include "Livre.h"
 using namespace std;
 
@@ -17,3 +19,5 @@ public:
 private:
     string illustration;
 };
+
+#endif //BIBLIOTHEQUE_POO_ALBUM_H

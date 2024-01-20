@@ -1,4 +1,6 @@
-#pragma once
+#ifndef BIBLIOTHEQUE_POO_POESIE_H
+#define BIBLIOTHEQUE_POO_POESIE_H
+
 #include "Livre.h"
 using namespace std;
 
@@ -14,4 +16,6 @@ public:
     void setIndicateur(const string& indic);
     void Affiche();
 };
+
+#endif //BIBLIOTHEQUE_POO_POESIE_H
 
