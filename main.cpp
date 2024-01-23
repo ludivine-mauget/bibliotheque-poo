@@ -47,6 +47,51 @@ int main() {
     Adherent a2("Massif", "Damien", "Rue de la République", &b2);
     Adherent a1bis("Bernard", "Kévin", "Rue de la libération", &b1);
 
+    b1.acheterLivre(livre1); // 0
+    b1.acheterLivre(bd1);
+    b2.acheterLivre(roman1); // 0
+    b2.acheterLivre(album1); // 1
+    //Emprunt
+    a1.emprunterLivre(1); // bd1 ok
+    a1.emprunterLivre(2); // theatre1 ok
+    a2.emprunterLivre(0);
+    a2.emprunterLivre(1);
+
+    // Affichage
+    b1.afficheBibliotheque();
+    cout << "-------------------------" << endl;
+    b2.afficheBibliotheque();
+    cout << "-------------------------" << endl;
+    a1.afficheAdherent();
+    cout << "-------------------------" << endl;
+    a2.afficheAdherent();
+    cout << "-------------------------" << endl;
+
+
+    // Rendre
+    a1.rendreLivre(1);
+
+
+    cout<< "Test si un adhérent peut emprunter plus de livre qu'il ne peut" << endl;
+    a1.rendreLivre(0);
+    a1.afficheAdherent();
+    a1.emprunterLivre(0);
+    a1.emprunterLivre(1);
+    a1.emprunterLivre(2);
+    a1.afficheAdherent();
+    a1.rendreLivre(0);
+    a1.rendreLivre(1);
+    cout << "-------------------------" << endl;
+
+    cout<< "Test si un adhérent peut emprunter un livre déjà emprunté" << endl;
+    a1.afficheAdherent();
+    cout << "-----------" << endl;
+    a1bis.afficheAdherent();
+    cout << "-----------" << endl;
+    a1.emprunterLivre(0);
+    a1.emprunterLivre(0);
+    a1bis.emprunterLivre(0);
+
     // Ajoute livre bib, on vérifie que les codes sont incrémentés
     b1.acheterLivre(livre1); // 0
     b1.acheterLivre(bd1); // 1
