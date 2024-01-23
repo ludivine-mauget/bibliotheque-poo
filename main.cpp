@@ -73,18 +73,19 @@ int main() {
 
 
     cout<< "Test si un adhérent peut emprunter plus de livre qu'il ne peut" << endl;
-    a1.rendreLivre(0);
     a1.afficheAdherent();
     a1.emprunterLivre(0);
     a1.emprunterLivre(1);
     a1.emprunterLivre(2);
     a1.afficheAdherent();
+
+    cout << " ---Test rendre livre---" << endl;
     a1.rendreLivre(0);
     a1.rendreLivre(1);
-    cout << "-------------------------" << endl;
-
-    cout<< "Test si un adhérent peut emprunter un livre déjà emprunté" << endl;
     a1.afficheAdherent();
+    cout << "---On voit que les livres ont bien été rendus---" << endl;
+
+    cout<< "---Test si un adhérent peut emprunter un livre déjà emprunté---" << endl;
     cout << "-----------" << endl;
     a1bis.afficheAdherent();
     cout << "-----------" << endl;
