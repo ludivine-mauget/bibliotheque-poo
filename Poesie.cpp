@@ -24,7 +24,7 @@ void Poesie::setIndicateur(const string& indic)
 	indicateur = indic;
 }
 
-void Poesie::Affiche()
+void Poesie::affiche()
 {
 	Livre::affiche();
 	cout << "Ce recueil de poséie contient des " << indicateur << endl;
