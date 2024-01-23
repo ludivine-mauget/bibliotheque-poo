@@ -5,8 +5,6 @@
 
 class NoeudLivre
 {
-friend class ListeLivre;
-
 private:
 	Livre livre;
 	NoeudLivre *suivant;
