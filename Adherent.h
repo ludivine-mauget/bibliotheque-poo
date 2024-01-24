@@ -20,10 +20,10 @@ private:
     string prenom;
     string adresse;
     int idAdherent;
-    Bibliotheque *bibliotheque;
+    Bibliotheque &bibliotheque;
     int nbMaxEmprunt;
 public:
-    Adherent(string nom, string prenom, string adresse, Bibliotheque* bibliotheque);
+    Adherent(string nom, string prenom, string adresse, Bibliotheque &bibliotheque);
     ~Adherent();
     const string& getNom() const;
     void setNom(const string& nom);

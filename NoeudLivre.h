@@ -11,7 +11,7 @@ private:
 
 public :
 	explicit NoeudLivre(const Livre& l);
-    NoeudLivre(Livre l, NoeudLivre *next);
+    NoeudLivre(const Livre& l, NoeudLivre *next);
     NoeudLivre* getSuivant();
     void setSuivant(NoeudLivre *next);
     Livre getLivre();

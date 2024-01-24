@@ -28,7 +28,7 @@ public:
     void rendreLivre(const string& isbn, Bibliotheque bibliotheque);
     void rendreLivreSansConnaitreBiblio(const string& isbn);
     void acheterLivre(const Livre& livre);
-    void supprimerLivre(const Livre& livre);
+    void supprimerLivre(Livre* livre);
     void ajouterAdherent(Adherent* adherent);
     void supprimerAdherent(const Adherent& adherent);
     void setNom(const string &nom);
@@ -41,7 +41,7 @@ public:
     int getIndiceEmprunt(const string& isbn);
     void rendreLivresPretesNonEmpruntes();
     void afficheLivresEmpruntes();
-    Livre getLivre(int indice);
+    Livre* getLivre(int indice);
 
     void operator+(const Livre& livre);
 };

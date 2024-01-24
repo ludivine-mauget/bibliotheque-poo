@@ -74,9 +74,9 @@ void Bibliotheque::afficheBibliotheque() {
     cout << "Nombre de livres maximum : " << nbLivresMax << endl;
     cout << "Liste des adhérents : " << endl;
     afficheAdherents();
-    cout << "Liste des livres : " << endl;
+    cout << "Liste des livres de la bibliothèque : " << endl;
     afficheLivres();
-    cout << "Liste des livres empruntés : " << endl;
+    cout << "Liste des livres empruntés à une autre bibliothèque : " << endl;
     afficheLivresEmpruntes();
 }
 
@@ -102,11 +102,11 @@ void Bibliotheque::afficheLivres(const int& categorie) {
 
 void Bibliotheque::emprunterLivre(const string& isbn, Bibliotheque bibliotheque) {
     int indice = bibliotheque.getIndiceLivre(isbn);
-    if (bibliotheque.getLivre(indice).getEtat()) {
+    if (bibliotheque.getLivre(indice)->getEtat()) {
         cout << "Le livre est déjà emprunté" << endl;
         return;
     }
-    auto* livre = new Livre(bibliotheque.getLivre(indice));
+    auto* livre = new Livre(*bibliotheque.getLivre(indice));
     livresEmpruntes.push_back(livre);
     bibliothequeCorrespondantes.push_back(&bibliotheque);
     livres.push_back(livre);
@@ -150,8 +150,8 @@ void Bibliotheque::acheterLivre(const Livre& livre) {
     idLivre++; // On incrémente le code du livre
 }
 
-void Bibliotheque::supprimerLivre(const Livre& livre) {
-    int indice = getIndiceLivre(livre.getCode());
+void Bibliotheque::supprimerLivre(Livre* livre) {
+    int indice = getIndiceLivre(livre->getCode());
     livres.erase(livres.begin() + indice);
 }
 
@@ -208,8 +208,8 @@ void Bibliotheque::setNbLivresMax(int nbLivresMax) {
     this->nbLivresMax = nbLivresMax;
 }
 
-Livre Bibliotheque::getLivre(int indice) {
-    return *livres[indice];
+Livre* Bibliotheque::getLivre(int indice) {
+    return livres[indice];
 }
 
 void Bibliotheque::operator+(const Livre& livre) {

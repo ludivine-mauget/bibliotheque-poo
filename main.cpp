@@ -37,9 +37,9 @@ int main() {
 
     Bibliotheque b1("Bibliothèque de l'Université de Lille", 2);
     Bibliotheque b2("Bibliothèque de Aix-Marseille", 4);
-    Adherent a1("Mauget", "Ludivine", "Rue de la Paix", &b1);
-    Adherent a2("Massif", "Damien", "Rue de la République", &b2);
-    Adherent a1bis("Bernard", "Kévin", "Rue de la libération", &b1);
+    Adherent a1("Mauget", "Ludivine", "Rue de la Paix", b1);
+    Adherent a2("Massif", "Damien", "Rue de la République", b2);
+    Adherent a1bis("Bernard", "Kévin", "Rue de la libération", b1);
 
     // "La bibliothèque 1 achète livre 1 et bd1"
     b1.acheterLivre(livre1); // 0
@@ -57,11 +57,17 @@ int main() {
 
 
     //Emprunt
+    cout << "---Emprunt d'un livre---" << endl;
+    cout << "---Affichage état avant emprunt :---" << endl;
+    cout << b1.getLivre(b1.getIndiceLivre("978-2-07-041699-3"))->getEtat() << endl;
     a1.emprunterLivre(1); // bd1 ok
+    cout << "---Affichage état après emprunt :---" << endl;
+    cout << b1.getLivre(b1.getIndiceLivre(1))->getEtat() << endl;
     cout << "---Emprunt d'un livre qui n'existe pas---" << endl;
     a1.emprunterLivre(5); // pas de code 5
     a2.emprunterLivre(0);
     a2.emprunterLivre(1);
+    cout << "-------------------------" << endl;
 
     // Affichage
     b1.afficheBibliotheque();
@@ -83,6 +89,7 @@ int main() {
     a1.emprunterLivre(0);
     a1.emprunterLivre(1);
     a1.emprunterLivre(2);
+    cout << "-------------------------" << endl;
     a1.afficheAdherent();
 
     cout << " ---Test rendre livre---" << endl;
@@ -93,30 +100,30 @@ int main() {
 
     cout<< "---Test si un adhérent peut emprunter un livre déjà emprunté---" << endl;
     a1.emprunterLivre(0);
-    a1.emprunterLivre(0);
-    cout << "---Affiche état livre 0---" << endl;
-    cout << b1.getLivre(b1.getIndiceLivre(0)).getEtat() << endl;
     a1bis.emprunterLivre(0);
-
+    cout << "-------------------------" << endl;
     a1.afficheAdherent();
     cout << "-------------------------" << endl;
     a1bis.afficheAdherent();
     // Test LUDIVINE
 
+    a1.rendreLivre(0);
+
+
     cout << "---Affichage bibliothèque avant emprunt :---" << endl;
     b1.afficheBibliotheque();
+    cout << "-------------------------" << endl;
     b2.afficheBibliotheque();
     cout << "-------------------------" << endl;
     cout << "---Affichage état avant emprunt :---" << endl;
-    cout << b1.getLivre(b1.getIndiceLivre("978-2-07-041699-3")).getEtat() << endl;
+    cout << b1.getLivre(b1.getIndiceLivre("978-2-07-041699-3"))->getEtat() << endl;
     cout << "-------------------------" << endl;
-
-    b2.emprunterLivre("978-2-07-041699-3", b1);
-    cout << "---Emprunt double d'un livre à une bibliotheque---" << endl;
     b2.emprunterLivre("978-2-07-041699-3", b1);
     cout << "---Affichage état après emprunt :---" << endl;
-    cout << b1.getLivre(b1.getIndiceLivre("978-2-07-041699-3")).getEtat() << endl;
+    cout << b1.getLivre(b1.getIndiceLivre("978-2-07-041699-3"))->getEtat() << endl;
     cout << "-------------------------" << endl;
+    cout << "---Emprunt double d'un livre à une bibliotheque---" << endl;
+    b2.emprunterLivre("978-2-07-041699-3", b1);
     cout << "---Affichage bibliothèque 1 après emprunt :---" << endl;
     b1.afficheBibliotheque();
     cout << "---Affichage bibliothèque 2 après emprunt :---" << endl;
@@ -125,10 +132,10 @@ int main() {
 
 
     cout << "---Suppression d'un livre avec son code---" << endl;
-    cout << "-- Avant suppression--" << endl;
+    cout << "-- Avant suppression : affichage de la liste des livres--" << endl;
     b1.afficheLivres();
     b1.supprimerLivre(b1.getLivre(b1.getIndiceLivre(0)));
-    cout << "-- Après suppression--" << endl;
+    cout << "-- Après suppression : affichage de la liste des livres--" << endl;
     b1.afficheLivres();
     cout << "-- Rajoute avec opérateur + --" << endl;
     b1 + livre1;
