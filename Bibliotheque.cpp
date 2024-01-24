@@ -108,6 +108,7 @@ void Bibliotheque::emprunterLivre(const string& isbn, Bibliotheque bibliotheque)
     }
     auto* livre = new Livre(bibliotheque.getLivre(indice));
     livresEmpruntes.push_back(livre);
+    bibliothequeCorrespondantes.push_back(&bibliotheque);
     livres.push_back(livre);
     bibliotheque.livres[indice]->setEtat(true);
 }
@@ -125,6 +126,21 @@ void Bibliotheque::rendreLivre(const string& isbn, Bibliotheque bibliotheque) {
     livres.erase(livres.begin() + indice1);
     int indice2 = bibliotheque.getIndiceLivre(isbn);
     bibliotheque.livres[indice2]->setEtat(false);
+}
+
+void Bibliotheque::rendreLivreSansConnaitreBiblio(const std::string &isbn) {
+    // Trouver à quelle bibliothèque appartient le livre
+    int indice = getIndiceEmprunt(isbn);
+    Bibliotheque* bibliotheque = bibliothequeCorrespondantes[indice];
+    rendreLivre(isbn, *bibliotheque);
+}
+
+void Bibliotheque::rendreLivresPretesNonEmpruntes() {
+    for (int i = 0; i < livresEmpruntes.size(); i++) {
+        if (!livresEmpruntes[i]->getEtat()) {
+            rendreLivre(livresEmpruntes[i]->getIsbn(), *bibliothequeCorrespondantes[i]);
+        }
+    }
 }
 
 void Bibliotheque::acheterLivre(const Livre& livre) {
@@ -156,7 +172,7 @@ int Bibliotheque::getIndiceEmprunt(const string& isbn) {
     } catch (runtime_error &e) {
         cerr << "Exception trouvée : " << e.what() << endl;
     }
-    return -1;
+    return -5;
 }
 
 void Bibliotheque::ajouterAdherent(Adherent* adherent) {

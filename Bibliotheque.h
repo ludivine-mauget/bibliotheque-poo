@@ -14,6 +14,7 @@ private:
 	vector<Adherent*> adherents;
     vector<Livre*> livres;
     vector<Livre*> livresEmpruntes;
+    vector<Bibliotheque*> bibliothequeCorrespondantes;
     int nbLivresMax;
     int numAdherent;
     int idLivre;
@@ -25,6 +26,7 @@ public:
     void afficheLivres(const int& categorie);
     void emprunterLivre(const string& isbn, Bibliotheque bibliotheque);
     void rendreLivre(const string& isbn, Bibliotheque bibliotheque);
+    void rendreLivreSansConnaitreBiblio(const string& isbn);
     void acheterLivre(const Livre& livre);
     void supprimerLivre(const Livre& livre);
     void ajouterAdherent(Adherent* adherent);
