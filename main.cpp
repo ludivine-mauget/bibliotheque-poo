@@ -130,6 +130,9 @@ int main() {
     b1.supprimerLivre(b1.getLivre(b1.getIndiceLivre(0)));
     cout << "-- Après suppression--" << endl;
     b1.afficheLivres();
+    cout << "-- Rajoute avec opérateur + --" << endl;
+    b1 + livre1;
+    b1.afficheLivres();
 
 // Rendre livres prêtés non empruntés
     cout << "---Rendre livres prêtés non empruntés---" << endl;

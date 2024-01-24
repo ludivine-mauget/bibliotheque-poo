@@ -40,6 +40,8 @@ public:
     void rendreLivresPretesNonEmpruntes();
     void afficheLivresEmpruntes();
     Livre getLivre(int indice);
+
+    void operator+(const Livre& livre);
 };
 
 #endif // BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

@@ -196,4 +196,7 @@ Livre Bibliotheque::getLivre(int indice) {
     return *livres[indice];
 }
 
+void Bibliotheque::operator+(const Livre& livre) {
+    acheterLivre(livre);
+}
 
