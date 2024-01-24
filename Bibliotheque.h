@@ -14,6 +14,7 @@ private:
 	vector<Adherent*> adherents;
     vector<Livre*> livres;
     vector<Livre*> livresEmpruntes;
+    vector<Bibliotheque*> bibliothequeCorrespondantes;
     int nbLivresMax;
     int numAdherent;
     int idLivre;
@@ -25,8 +26,9 @@ public:
     void afficheLivres(const int& categorie);
     void emprunterLivre(const string& isbn, Bibliotheque bibliotheque);
     void rendreLivre(const string& isbn, Bibliotheque bibliotheque);
+    void rendreLivreSansConnaitreBiblio(const string& isbn);
     void acheterLivre(const Livre& livre);
-    void supprimerLivre(const Livre& livre);
+    void supprimerLivre(Livre* livre);
     void ajouterAdherent(Adherent* adherent);
     void supprimerAdherent(const Adherent& adherent);
     void setNom(const string &nom);
@@ -37,8 +39,11 @@ public:
     template<typename T>
     int getIndiceLivre(T arg);
     int getIndiceEmprunt(const string& isbn);
+    void rendreLivresPretesNonEmpruntes();
     void afficheLivresEmpruntes();
-    Livre getLivre(int indice);
+    Livre* getLivre(int indice);
+
+    void operator+(const Livre& livre);
 };
 
 #endif // BIBLIOTHEQUE_POO_BIBLIOTHEQUE_H

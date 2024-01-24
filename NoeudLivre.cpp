@@ -6,7 +6,7 @@ NoeudLivre::NoeudLivre(const Livre& l)
     suivant = nullptr;
 }
 
-NoeudLivre::NoeudLivre(Livre l, NoeudLivre *next)
+NoeudLivre::NoeudLivre(const Livre& l, NoeudLivre *next)
 {
     livre = l;
     suivant = next;

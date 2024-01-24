@@ -9,6 +9,7 @@ using namespace std;
 
 template <typename T>
 int Bibliotheque::getIndiceLivre(T arg) {
+    return 0;
 }
 
 template <>
@@ -74,9 +75,9 @@ void Bibliotheque::afficheBibliotheque() {
     cout << "Nombre de livres maximum : " << nbLivresMax << endl;
     cout << "Liste des adhérents : " << endl;
     afficheAdherents();
-    cout << "Liste des livres : " << endl;
+    cout << "Liste des livres de la bibliothèque : " << endl;
     afficheLivres();
-    cout << "Liste des livres empruntés : " << endl;
+    cout << "Liste des livres empruntés à une autre bibliothèque : " << endl;
     afficheLivresEmpruntes();
 }
 
@@ -102,12 +103,13 @@ void Bibliotheque::afficheLivres(const int& categorie) {
 
 void Bibliotheque::emprunterLivre(const string& isbn, Bibliotheque bibliotheque) {
     int indice = bibliotheque.getIndiceLivre(isbn);
-    if (bibliotheque.getLivre(indice).getEtat()) {
+    if (bibliotheque.getLivre(indice)->getEtat()) {
         cout << "Le livre est déjà emprunté" << endl;
         return;
     }
-    auto* livre = new Livre(bibliotheque.getLivre(indice));
+    auto* livre = new Livre(*bibliotheque.getLivre(indice));
     livresEmpruntes.push_back(livre);
+    bibliothequeCorrespondantes.push_back(&bibliotheque);
     livres.push_back(livre);
     bibliotheque.livres[indice]->setEtat(true);
 }
@@ -127,6 +129,23 @@ void Bibliotheque::rendreLivre(const string& isbn, Bibliotheque bibliotheque) {
     bibliotheque.livres[indice2]->setEtat(false);
 }
 
+void Bibliotheque::rendreLivreSansConnaitreBiblio(const std::string &isbn) {
+    // Trouver à quelle bibliothèque appartient le livre
+    int indice = getIndiceEmprunt(isbn);
+    Bibliotheque* bibliotheque = bibliothequeCorrespondantes[indice];
+    rendreLivre(isbn, *bibliotheque);
+}
+
+void Bibliotheque::rendreLivresPretesNonEmpruntes() {
+    cout << "taille " << livresEmpruntes.size() << endl;
+    int taille = static_cast<int>(livresEmpruntes.size());
+    for (int i = 0; i < taille; i++) {
+        if (!livresEmpruntes[i]->getEtat()) {
+            rendreLivre(livresEmpruntes[i]->getIsbn(), *bibliothequeCorrespondantes[i]);
+        }
+    }
+}
+
 void Bibliotheque::acheterLivre(const Livre& livre) {
     auto* livre1 = new Livre(livre); // On crée une copie du livre
     livres.push_back(livre1); // On ajoute la copie du livre à la liste des livres de notre bibliothèque
@@ -134,8 +153,8 @@ void Bibliotheque::acheterLivre(const Livre& livre) {
     idLivre++; // On incrémente le code du livre
 }
 
-void Bibliotheque::supprimerLivre(const Livre& livre) {
-    int indice = getIndiceLivre(livre.getCode());
+void Bibliotheque::supprimerLivre(Livre* livre) {
+    int indice = getIndiceLivre(livre->getCode());
     livres.erase(livres.begin() + indice);
 }
 
@@ -149,7 +168,7 @@ int Bibliotheque::getIndiceEmprunt(const string& isbn) {
                 return i;
             }
             i++;
-            if (i == livresEmpruntes.size()) {
+            if (i == static_cast<int>(livresEmpruntes.size())) {
                 throw runtime_error("Le livre n'existe pas");
             }
         }
@@ -192,7 +211,11 @@ void Bibliotheque::setNbLivresMax(int nbLivresMax) {
     this->nbLivresMax = nbLivresMax;
 }
 
-Livre Bibliotheque::getLivre(int indice) {
-    return *livres[indice];
+Livre* Bibliotheque::getLivre(int indice) {
+    return livres[indice];
+}
+
+void Bibliotheque::operator+(const Livre& livre) {
+    acheterLivre(livre);
 }
 
