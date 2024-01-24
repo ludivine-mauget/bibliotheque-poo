@@ -91,7 +91,7 @@ void Adherent::supprimeLivre(Livre livre) { //supr un element
 
 void Adherent::emprunterLivre(int codeLivre) {
     if (getNbEmprunts() >= nbMaxEmprunt) {
-        cout << nom << " " << prenom << " a atteint le nombre maximum d'emprunt autorisé par." << bibliotheque->getNom() << endl;
+        cout << nom << " " << prenom << " a atteint le nombre maximum d'emprunt autorisé par : " << bibliotheque->getNom() << endl;
         return;
     }
     int id = bibliotheque->getIndiceLivre(codeLivre);

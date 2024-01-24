@@ -37,6 +37,7 @@ public:
     template<typename T>
     int getIndiceLivre(T arg);
     int getIndiceEmprunt(const string& isbn);
+    void rendreLivresPretesNonEmpruntes();
     void afficheLivresEmpruntes();
     Livre getLivre(int indice);
 };
