@@ -138,6 +138,9 @@ int main() {
     cout << "---Rendre livres prêtés non empruntés---" << endl;
     cout << "---Affichage bibliothèque 1 avant rendu---" << endl;
     b2.afficheBibliotheque();
+//    b2.rendreLivresPretesNonEmpruntes();
+    cout << "---Affichage bibliothèque 1 après rendu---" << endl;
+    b2.afficheBibliotheque();
 
 
 
