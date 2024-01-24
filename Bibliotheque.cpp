@@ -9,6 +9,7 @@ using namespace std;
 
 template <typename T>
 int Bibliotheque::getIndiceLivre(T arg) {
+    return 0;
 }
 
 template <>
@@ -136,7 +137,9 @@ void Bibliotheque::rendreLivreSansConnaitreBiblio(const std::string &isbn) {
 }
 
 void Bibliotheque::rendreLivresPretesNonEmpruntes() {
-    for (int i = 0; i < livresEmpruntes.size(); i++) {
+    cout << "taille " << livresEmpruntes.size() << endl;
+    int taille = static_cast<int>(livresEmpruntes.size());
+    for (int i = 0; i < taille; i++) {
         if (!livresEmpruntes[i]->getEtat()) {
             rendreLivre(livresEmpruntes[i]->getIsbn(), *bibliothequeCorrespondantes[i]);
         }
@@ -165,14 +168,14 @@ int Bibliotheque::getIndiceEmprunt(const string& isbn) {
                 return i;
             }
             i++;
-            if (i == livresEmpruntes.size()) {
+            if (i == static_cast<int>(livresEmpruntes.size())) {
                 throw runtime_error("Le livre n'existe pas");
             }
         }
     } catch (runtime_error &e) {
         cerr << "Exception trouvée : " << e.what() << endl;
     }
-    return -5;
+    return -1;
 }
 
 void Bibliotheque::ajouterAdherent(Adherent* adherent) {

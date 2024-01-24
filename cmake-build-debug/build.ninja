@@ -51,70 +51,70 @@ build cmake_object_order_depends_target_bibliotheque-poo: phony || CMakeFiles/bi
 
 build CMakeFiles/bibliotheque-poo.dir/Poesie.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Poesie.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Poesie.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/BD.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/BD.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\BD.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Bibliotheque.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Bibliotheque.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Bibliotheque.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Livre.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Livre.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Livre.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Roman.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Roman.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Roman.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Theatre.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Theatre.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Theatre.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/main.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/main.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Adherent.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Adherent.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Adherent.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/Album.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/Album.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\Album.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
 
 build CMakeFiles/bibliotheque-poo.dir/NoeudLivre.cpp.obj: CXX_COMPILER__bibliotheque-poo_unscanned_Debug C$:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/NoeudLivre.cpp || cmake_object_order_depends_target_bibliotheque-poo
   DEP_FILE = CMakeFiles\bibliotheque-poo.dir\NoeudLivre.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g -fdiagnostics-color=always
   INCLUDES = -IC:/Users/Massi/Desktop/S7/POO/bibliotheque-poo/.
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   OBJECT_FILE_DIR = CMakeFiles\bibliotheque-poo.dir
@@ -128,7 +128,7 @@ build CMakeFiles/bibliotheque-poo.dir/NoeudLivre.cpp.obj: CXX_COMPILER__biblioth
 # Link the executable bibliotheque-poo.exe
 
 build bibliotheque-poo.exe: CXX_EXECUTABLE_LINKER__bibliotheque-poo_Debug CMakeFiles/bibliotheque-poo.dir/Poesie.cpp.obj CMakeFiles/bibliotheque-poo.dir/BD.cpp.obj CMakeFiles/bibliotheque-poo.dir/Bibliotheque.cpp.obj CMakeFiles/bibliotheque-poo.dir/Livre.cpp.obj CMakeFiles/bibliotheque-poo.dir/Roman.cpp.obj CMakeFiles/bibliotheque-poo.dir/Theatre.cpp.obj CMakeFiles/bibliotheque-poo.dir/main.cpp.obj CMakeFiles/bibliotheque-poo.dir/Adherent.cpp.obj CMakeFiles/bibliotheque-poo.dir/Album.cpp.obj CMakeFiles/bibliotheque-poo.dir/NoeudLivre.cpp.obj
-  FLAGS = -g
+  FLAGS = --static -fexec-charset=UTF-8 -finput-charset=UTF-8 -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\bibliotheque-poo.dir
   POST_BUILD = cd .

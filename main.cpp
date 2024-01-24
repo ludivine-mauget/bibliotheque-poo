@@ -84,7 +84,7 @@ int main() {
     a1.rendreLivre(1);
 
 
-    cout<< "Test si un adhérent peut emprunter plus de livre qu'il ne peut" << endl;
+    cout << "Test si un adhérent peut emprunter plus de livre qu'il ne peut" << endl;
     a1.afficheAdherent();
     a1.emprunterLivre(0);
     a1.emprunterLivre(1);
@@ -145,15 +145,10 @@ int main() {
     cout << "---Rendre livres prêtés non empruntés---" << endl;
     cout << "---Affichage bibliothèque 1 avant rendu---" << endl;
     b2.afficheBibliotheque();
+    b2.rendreLivre("978-2-07-041699-3", b1);
 //    b2.rendreLivresPretesNonEmpruntes();
     cout << "---Affichage bibliothèque 1 après rendu---" << endl;
     b2.afficheBibliotheque();
-
-
-
-
-
-
 
     return 0;
 }
